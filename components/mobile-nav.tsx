@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Facebook, Menu, Phone, X } from "lucide-react";
+import { Facebook, Menu, X } from "lucide-react";
 
 type MobileNavProps = {
-  phoneHref: string;
   facebookHref: string;
 };
 
@@ -15,7 +14,7 @@ const links = [
   { href: "#visit", label: "Location & hours" },
 ];
 
-export function MobileNav({ phoneHref, facebookHref }: MobileNavProps) {
+export function MobileNav({ facebookHref }: MobileNavProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -29,13 +28,6 @@ export function MobileNav({ phoneHref, facebookHref }: MobileNavProps) {
 
   return (
     <div className="relative flex items-center gap-2 lg:hidden">
-      <a
-        href={phoneHref}
-        className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-primary px-3.5 text-xs font-bold text-white transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-      >
-        <Phone size={15} aria-hidden="true" />
-        <span>Call</span>
-      </a>
       <button
         type="button"
         aria-label={open ? "Close navigation menu" : "Open navigation menu"}
