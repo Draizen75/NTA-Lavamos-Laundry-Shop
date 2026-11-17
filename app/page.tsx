@@ -39,7 +39,7 @@ export default function Home() {
       <section className="relative isolate overflow-hidden bg-background">
         <div className="pointer-events-none absolute inset-0 -z-20" aria-hidden="true">
           <Image
-            src="/lavamos%20shop%201.jpg"
+            src="/lavamos%20shop.jpg"
             alt=""
             fill
             priority
