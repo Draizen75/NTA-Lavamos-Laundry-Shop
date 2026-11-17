@@ -35,6 +35,7 @@ export default function Home() {
           </span>
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm font-semibold text-brand-deep md:flex">
+          <Link className="transition-colors hover:text-primary" href="#services">Services & rates</Link>
           <Link className="transition-colors hover:text-primary" href="#about">About</Link>
           <Link className="transition-colors hover:text-primary" href="#visit">Location & hours</Link>
           <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
@@ -87,6 +88,88 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section id="services" className="bg-[#f4f8f5] py-20 sm:py-24">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Services & pricing</p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-brand-deep sm:text-5xl">Laundry made simple.</h2>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">Choose full-service laundry or use the self-service machines. Prices below follow the shop's supplied rate poster.</p>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
+              <div className="bg-[#e83b83] px-6 py-5 text-white">
+                <h3 className="text-2xl font-black">Full-service</h3>
+                <p className="mt-1 text-sm text-white/90">Wash, dry and fold</p>
+              </div>
+              <CardContent className="p-6">
+                <ul className="divide-y divide-border">
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">With detergent and fabcon</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱190.00</strong></li>
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">No detergent or fabcon</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱175.00</strong></li>
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Fabcon only (no detergent)</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱185.00</strong></li>
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Detergent only (no fabcon)</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱180.00</strong></li>
+                </ul>
+                <p className="mt-4 rounded-xl bg-[#fff0f6] p-4 text-xs leading-5 text-[#8f2855]">For detergent and fabcon add-ons, refer to the shop's price list.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
+              <div className="bg-[#078b70] px-6 py-5 text-white">
+                <h3 className="text-2xl font-black">Self-service</h3>
+                <p className="mt-1 text-sm text-white/90">Select the machine service you need</p>
+              </div>
+              <CardContent className="p-6">
+                <ul className="divide-y divide-border">
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Wash only</span><strong className="text-lg font-black text-[#087663]">₱70.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Dry only</span><strong className="text-lg font-black text-[#087663]">₱75.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Spin dry</span><strong className="text-lg font-black text-[#087663]">₱15.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Fold</span><strong className="text-lg font-black text-[#087663]">₱20.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional wash (24 mins)</span><strong className="text-lg font-black text-[#087663]">₱50.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional dry (5 mins)</span><strong className="text-lg font-black text-[#087663]">₱10.00</strong></li>
+                </ul>
+                <p className="mt-4 rounded-xl bg-[#eaf8f3] p-4 text-xs leading-5 text-[#176b5a]">Available upon request and subject to machine availability and laundry volume.</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <Card className="rounded-3xl border-0 shadow-sm">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Service turnaround</p>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl bg-[#eaf4ff] p-5">
+                    <h3 className="font-extrabold text-brand-deep">Regular service</h3>
+                    <p className="mt-1 text-2xl font-black text-primary">No extra fee</p>
+                    <p className="mt-3 text-xs leading-5 text-muted-foreground">Processed according to the regular queue. Same-day service may be available when daily capacity allows. During peak periods, orders may be scheduled for next-day or later pickup.</p>
+                  </div>
+                  <div className="rounded-2xl bg-[#fff0f6] p-5">
+                    <h3 className="font-extrabold text-brand-deep">Rush service</h3>
+                    <p className="mt-1 text-2xl font-black text-[#e83b83]">+₱50 / load</p>
+                    <p className="mt-3 text-xs leading-5 text-muted-foreground">Priority processing. Available upon request and subject to machine availability and laundry volume. Comforters, bulky items and special loads may require additional processing time.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-3xl border-0 shadow-sm">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Laundry load capacity</p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-2xl bg-[#eef8e8] p-4"><p className="text-sm font-extrabold text-brand-deep">Light load</p><p className="mt-1 text-2xl font-black text-primary">8 kg</p><p className="mt-1 text-xs text-muted-foreground">T-shirts, shorts, underwear, thin pajamas, blouses and other lightweight garments.</p></div>
+                  <div className="rounded-2xl bg-[#eaf3ff] p-4"><p className="text-sm font-extrabold text-brand-deep">Standard mixed load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">A combination of light and regular garments such as shirts, pants and pajamas.</p></div>
+                  <div className="rounded-2xl bg-[#fff4df] p-4"><p className="text-sm font-extrabold text-brand-deep">Heavy load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">Jeans, denim clothing, towels, curtains, hoodies, sweatshirts and jackets.</p></div>
+                  <div className="rounded-2xl bg-[#fff0f6] p-4"><p className="text-sm font-extrabold text-brand-deep">Comforter</p><p className="mt-1 text-2xl font-black text-primary">1 piece</p><p className="mt-1 text-xs text-muted-foreground">One comforter per load.</p></div>
+                </div>
+                <p className="mt-4 text-[11px] leading-5 text-muted-foreground"><strong className="text-brand-deep">Important:</strong> Load capacity may be reduced depending on size, thickness, weight and type of laundry to ensure proper washing and drying.</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-5 text-muted-foreground">Please contact NTA Lavamos to confirm availability and any current price-list updates before visiting.</p>
+        </div>
+      </section>
+
       <section id="about" className="container grid items-center gap-12 py-20 sm:py-28 md:grid-cols-2">
         <div className="relative mx-auto grid min-h-[330px] w-full max-w-[490px] place-items-center overflow-hidden rounded-[2rem] bg-brand-mint p-8">
           <div className="absolute -left-12 -top-12 h-48 w-48 rounded-full bg-white/70" />
@@ -96,7 +179,7 @@ export default function Home() {
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">NTA Lavamos Laundry Shop</p>
           <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-brand-deep sm:text-5xl">Your neighborhood laundry <span className="text-primary">stop.</span></h2>
-          <p className="mt-5 text-sm leading-7 text-muted-foreground">NTA Lavamos is listed as a laundry service in the Poblacion area of Bato, Camarines Sur. Contact the shop directly for its current service menu, prices, turnaround times, and special-care options.</p>
+          <p className="mt-5 text-sm leading-7 text-muted-foreground">Choose full-service wash, dry and fold or self-service machine options. View the service rates, turnaround choices and load-capacity guidance above, or contact the shop to confirm availability.</p>
           <Card className="mt-7 rounded-2xl border-border/80 shadow-sm">
             <CardContent className="flex items-center gap-4 p-5">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-mint text-primary"><Star className="fill-amber-400 text-amber-500" size={21} /></span>
