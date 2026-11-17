@@ -1,6 +1,6 @@
-# NTA Lavamos Laundry Shop — Next.js demo
+# NTA Lavamos Laundry Shop
 
-A responsive, mobile-first sales concept for NTA Lavamos Laundry Shop in Bato, Camarines Sur.
+A responsive, mobile-first website for NTA Lavamos Laundry Shop in Bato, Camarines Sur.
 
 ## Run locally
 
@@ -10,20 +10,20 @@ A responsive, mobile-first sales concept for NTA Lavamos Laundry Shop in Bato, C
 4. Run `npm run dev`.
 5. Visit http://localhost:3000.
 
-## Before presenting or publishing
+## Public business details
 
-This is a concept demo, not an owner-approved business website. Confirm every business detail with the owner before launch.
+The address, phone number, listed operating hours, and Google rating are based on the public Google Maps business listing and should be reconfirmed with the owner before relying on them.
 
-- Confirm business name spelling, address, phone number, Facebook page, email, and contact preferences.
-- Confirm actual services, pricing, turnaround times, pickup/delivery availability, and operating hours.
-- Replace `hello@example.com` in `app/page.tsx` with an owner-approved inquiry email, or connect the form to an approved form backend.
-- Replace the generic stock photos with owner-approved shop and laundry photos.
-- Verify the Google Maps destination link and embed an accurate map if desired.
-- Remove the demo ribbon after owner approval.
-- Add a privacy notice if collecting customer information.
+- Address: 9968+PPX, Poblacion Road, Bato, Camarines Sur, Philippines
+- Phone: +63 905 563 0585
+- Listed hours: Daily, 7:00 AM–7:00 PM
+- Google rating at time of research: 5.0/5 from 1 review
 
-## Notes
+The location section uses an interactive Google Maps embed and provides a separate Google Maps directions link.
 
-- The inquiry form currently opens the visitor's email app using a placeholder address; it does not store or send data to a server.
-- Service descriptions are intentionally qualified as provisional.
-- The address is based on a previously surfaced public business listing and must be reconfirmed.
+## Owner confirmation before launch
+
+- Confirm the business details, opening hours, and service menu.
+- Provide the official Facebook page URL and owner-approved photos if these should appear in the website gallery.
+- Confirm prices, turnaround times, payment methods, and pickup/delivery availability before publishing those details.
+- Add a privacy notice if customer information is collected in a future update.
