@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Palette derived from the official logo: aqua, charcoal, red and washer blue. */
 :root {
-  --background: 48 33% 98%;
-  --foreground: 174 35% 20%;
+  --background: 180 25% 98%;
+  --foreground: 190 30% 14%;
   --card: 0 0% 100%;
-  --card-foreground: 174 35% 20%;
-  --primary: 177 36% 41%;
+  --card-foreground: 190 30% 14%;
+  --primary: 183 62% 31%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 148 25% 92%;
-  --secondary-foreground: 174 35% 20%;
-  --muted: 145 18% 94%;
-  --muted-foreground: 160 8% 43%;
-  --accent: 148 25% 92%;
-  --accent-foreground: 174 35% 20%;
-  --border: 150 16% 87%;
-  --input: 150 16% 83%;
-  --ring: 177 36% 41%;
-  --radius: 0.75rem;
+  --secondary: 180 55% 94%;
+  --secondary-foreground: 190 30% 14%;
+  --muted: 180 20% 94%;
+  --muted-foreground: 190 10% 39%;
+  --accent: 180 55% 94%;
+  --accent-foreground: 190 30% 14%;
+  --border: 180 15% 85%;
+  --input: 180 15% 82%;
+  --ring: 183 62% 31%;
+  --radius: 0.85rem;
 }
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body { margin: 0; background: hsl(var(--background)); color: hsl(var(--foreground)); }
-::selection { background: #cde6dc; color: #244b4b; }
+::selection { background: #baf4f4; color: #18383b; }
+:focus-visible { outline: 2px solid #167f86; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
