@@ -23,7 +23,8 @@ const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURICo
 export default function Home() {
   return (
     <main id="top" className="overflow-x-clip">
-      <header className="container relative z-50 flex h-[76px] items-center justify-between border-b border-border/70 bg-background/95 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/95 shadow-sm backdrop-blur-sm">
+        <div className="container relative flex h-[76px] items-center justify-between">
         <Link href="#" className="flex items-center gap-3" aria-label="NTA Lavamos home">
           <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-12 w-auto rounded-md object-contain" />
           <span className="sr-only">NTA Lavamos Laundry Shop · Bato</span>
@@ -35,6 +36,7 @@ export default function Home() {
           <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
         </nav>
         <MobileNav facebookHref={business.facebook} />
+        </div>
       </header>
 
       <section className="relative isolate overflow-hidden bg-background">
