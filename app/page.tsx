@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Clock3, Facebook, MapPin, Phone, Star, WashingMachine } from "lucide-react";
+import { ArrowUpRight, Clock3, Facebook, MapPin, Phone, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -187,10 +187,15 @@ export default function Home() {
       </section>
 
       <section id="about" className="container grid items-center gap-12 py-20 sm:py-28 md:grid-cols-2">
-        <div className="relative mx-auto grid min-h-[330px] w-full max-w-[490px] place-items-center overflow-hidden rounded-[2rem] bg-brand-mint p-8">
-          <div className="absolute -left-12 -top-12 h-48 w-48 rounded-full bg-white/70" />
-          <div className="absolute -bottom-14 -right-8 h-56 w-56 rounded-full bg-brand-coral/25" />
-          <div className="relative grid h-48 w-48 place-items-center rounded-full bg-white text-primary shadow-soft"><WashingMachine size={94} strokeWidth={1.2} /></div>
+        <div className="relative mx-auto min-h-[330px] w-full max-w-[490px] overflow-hidden rounded-[2rem] bg-brand-mint shadow-soft">
+          <Image
+            src="/lavamos%20shop%201.jpg"
+            alt="Inside NTA Lavamos Laundry Shop, showing the actual shop interior and laundry equipment"
+            width={1400}
+            height={1050}
+            sizes="(max-width: 768px) 100vw, 490px"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
         </div>
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">NTA Lavamos Laundry Shop</p>
