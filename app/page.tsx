@@ -100,7 +100,7 @@ export default function Home() {
               <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our laundry machines</figcaption>
             </figure>
             <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 768px) 100vw, 50vw" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
+              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
               <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Weighing and laundry area</figcaption>
             </figure>
           </div>
