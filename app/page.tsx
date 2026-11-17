@@ -13,7 +13,8 @@ const business = {
   facebook: "https://www.facebook.com/profile.php?id=100090370825470",
 };
 
-const mapQuery = encodeURIComponent(business.address);\nconst mapEmbed = "https://www.google.com/maps?q=" + mapQuery + "&output=embed";
+const mapQuery = encodeURIComponent(business.address);
+const mapEmbed = "https://www.google.com/maps?q=" + mapQuery + "&output=embed";
 const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(business.name + ", " + business.address);
 
 export default function Home() {
