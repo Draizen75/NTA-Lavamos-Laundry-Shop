@@ -72,7 +72,7 @@ export default function Home() {
               className="h-auto w-full object-contain"
             />
           </div>
-        </div>/div>
+        </div>
       </section>
 
       <section className="border-y border-border bg-[#f0f5ef]">
