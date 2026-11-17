@@ -5,7 +5,6 @@ import {
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
@@ -61,7 +60,7 @@ export default function Home() {
           <Link className="transition-colors hover:text-primary" href="#how-it-works">How it works</Link>
           <Link className="transition-colors hover:text-primary" href="#about">About</Link>
           <Link className="transition-colors hover:text-primary" href="#visit">Visit us</Link>
-          <Button asChild={false} className="h-10 px-4" onClick={() => { window.location.hash = "contact"; }}>Get in touch <ArrowRight size={15} /></Button>
+          <Link href="#contact" className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90">Get in touch <ArrowRight size={15} /></Link>
         </nav>
         <Link href="#contact" className="rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white md:hidden">Contact us</Link>
       </header>
