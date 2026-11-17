@@ -32,6 +32,7 @@ export default function Home() {
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm font-semibold text-brand-deep md:flex">
           <Link className="transition-colors hover:text-primary" href="#services">Services & rates</Link>
+          <Link className="transition-colors hover:text-primary" href="#gallery">Our shop</Link>
           <Link className="transition-colors hover:text-primary" href="#about">About</Link>
           <Link className="transition-colors hover:text-primary" href="#visit">Location & hours</Link>
           <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
@@ -63,13 +64,13 @@ export default function Home() {
           <div className="absolute -inset-4 rounded-[2rem] bg-brand-mint/70 blur-xl" aria-hidden="true" />
           <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-soft">
             <Image
-              src="/lavamos%20logo.jpg"
-              alt="NTA Lavamos Laundry Shop official logo featuring its washing machine and Wash, Dry, Fold services"
-              width={1600}
-              height={900}
+              src="/lavamos%20shop.jpg"
+              alt="Inside NTA Lavamos Laundry Shop showing its commercial washer and dryer machines"
+              width={1024}
+              height={1365}
               priority
               sizes="(max-width: 768px) 100vw, 600px"
-              className="h-auto w-full object-contain"
+              className="h-[420px] w-full object-cover sm:h-[520px]"
             />
           </div>
         </div>
@@ -83,6 +84,26 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section id="gallery" className="bg-white py-20 sm:py-24">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Inside NTA Lavamos</p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-brand-deep sm:text-5xl">A closer look at our shop.</h2>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">See the laundry machines and customer area at our Bato location.</p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+              <Image src="/lavamos%20shop.jpg" alt="Commercial washer and dryer machines inside NTA Lavamos Laundry Shop" width={1024} height={1365} sizes="(max-width: 768px) 100vw, 50vw" className="h-[360px] w-full object-cover sm:h-[460px]" />
+              <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our laundry machines</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+              <Image src="/lavamos%20shop%201.jpg" alt="Customer area and laundry equipment inside NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 768px) 100vw, 50vw" className="h-[360px] w-full object-cover sm:h-[460px]" />
+              <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our shop interior</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
       <section id="services" className="bg-[#f4f8f5] py-20 sm:py-24">
         <div className="container">
