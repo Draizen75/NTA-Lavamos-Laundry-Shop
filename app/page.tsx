@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUp, ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
 import { MobileNav } from "@/components/mobile-nav";
+import { BackToTop } from "@/components/back-to-top";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -286,13 +287,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <a
-        href="#top"
-        aria-label="Back to top"
-        className="fixed bottom-5 right-5 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-brand-deep text-white shadow-lg transition hover:-translate-y-1 hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:bottom-7 sm:right-7"
-      >
-        <ArrowUp size={20} aria-hidden="true" />
-      </a>
+      <BackToTop />
     </main>
   );
 }
