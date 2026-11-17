@@ -55,15 +55,15 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="container relative grid min-h-0 items-start py-8 pb-12 sm:min-h-[620px] sm:items-center sm:py-14 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
-          <div className="relative z-10 max-w-[650px]">
-            <Badge variant="secondary" className="border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
+          <div className="relative z-10 max-w-[650px] motion-fade-up">
+            <Badge variant="secondary" className="motion-soft-fade border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
             <h1 className="mt-5 max-w-[650px] text-[clamp(2.75rem,9vw,5.8rem)] font-black leading-[0.98] tracking-[-0.065em] text-brand-deep sm:mt-6">
               Fresh clothes.<br /><span className="text-primary">Lighter days.</span>
             </h1>
-            <p className="mt-5 max-w-lg text-sm leading-7 text-muted-foreground sm:mt-6 sm:text-base sm:leading-8">
+            <p className="motion-fade-up-delay-1 mt-5 max-w-lg text-sm leading-7 text-muted-foreground sm:mt-6 sm:text-base sm:leading-8">
               Looking for a nearby laundry service in Bato? Visit NTA Lavamos Laundry Shop along Poblacion Road or call ahead to ask about current services and rates.
             </p>
-            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <div className="motion-fade-up-delay-2 mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call the shop</a>
               <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-1 rounded-lg border border-brand-deep/10 bg-white/90 px-4 text-sm font-bold text-brand-deep shadow-sm transition hover:border-primary hover:text-primary sm:justify-start sm:gap-0 sm:border-0 sm:bg-transparent sm:px-3 sm:shadow-none">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
             </div>
@@ -84,12 +84,12 @@ export default function Home() {
             <p className="mt-4 text-sm leading-7 text-muted-foreground">See the laundry machines and customer area at our Bato location.</p>
           </div>
           <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 md:grid-cols-2">
-            <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-              <Image src="/lavamos%20shop.jpg" alt="Commercial washer and dryer machines inside NTA Lavamos Laundry Shop" width={1024} height={1365} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
+            <figure className="motion-card overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+              <Image src="/lavamos%20shop.jpg" alt="Commercial washer and dryer machines inside NTA Lavamos Laundry Shop" width={1024} height={1365} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="motion-image h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
               <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our laundry machines</figcaption>
             </figure>
-            <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
+            <figure className="motion-card overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="motion-image h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
               <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Weighing and laundry area</figcaption>
             </figure>
           </div>
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 lg:grid-cols-2">
-            <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
+            <Card className="motion-card overflow-hidden rounded-3xl border-0 shadow-sm">
               <div className="bg-brand-red px-6 py-5 text-white">
                 <h3 className="text-2xl font-black">Full-service</h3>
                 <p className="mt-1 text-sm text-white/90">Wash, dry and fold</p>
@@ -123,7 +123,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
+            <Card className="motion-card overflow-hidden rounded-3xl border-0 shadow-sm">
               <div className="bg-brand-blue px-6 py-5 text-white">
                 <h3 className="text-2xl font-black">Self-service</h3>
                 <p className="mt-1 text-sm text-white/90">Select the machine service you need</p>
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
 
           <div className="mt-5 grid gap-5 sm:mt-6 sm:gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <Card className="rounded-3xl border-0 shadow-sm">
+            <Card className="motion-card rounded-3xl border-0 shadow-sm">
               <CardContent className="p-6 sm:p-8">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Service turnaround</p>
                 <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -161,7 +161,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="rounded-3xl border-0 shadow-sm">
+            <Card className="motion-card rounded-3xl border-0 shadow-sm">
               <CardContent className="p-6 sm:p-8">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Laundry load capacity</p>
                 <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
