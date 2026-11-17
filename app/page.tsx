@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Clock3, MapPin, Phone } from "lucide-react";
+import { MobileNav } from "@/components/mobile-nav";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -37,7 +38,7 @@ export default function Home() {
           <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
           <a href={business.phoneHref} className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"><Phone size={15} /> Call the shop</a>
         </nav>
-        <div className="flex items-center gap-2 lg:hidden"><a href={business.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit NTA Lavamos on Facebook" className="grid h-10 w-10 place-items-center rounded-lg border border-border text-primary"><Facebook size={18} /></a><a href={business.phoneHref} className="rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white">Call now</a></div>
+        <MobileNav phoneHref={business.phoneHref} facebookHref={business.facebook} />
       </header>
       <nav aria-label="Quick navigation" className="container grid grid-cols-2 gap-x-4 gap-y-3 border-t border-border/70 py-3 text-xs font-semibold text-brand-deep sm:flex sm:flex-wrap sm:gap-5 lg:hidden">
         <Link className="shrink-0" href="#services">Services & rates</Link><Link className="shrink-0" href="#gallery">Our shop</Link><Link className="shrink-0" href="#about">About</Link><Link className="shrink-0" href="#visit">Location & hours</Link>
