@@ -39,16 +39,16 @@ export default function Home() {
       <section className="relative isolate overflow-hidden bg-background">
         <div className="pointer-events-none absolute inset-0 -z-20" aria-hidden="true">
           <Image
-            src="/lavamos%20shop.jpg"
+            src="/lavamos%20shop%201.jpg"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[58%_62%] sm:object-[62%_65%] lg:object-[72%_center]"
+            className="object-cover object-[58%_center] sm:object-[62%_center] lg:object-[58%_center]"
           />
         </div>
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.97)_16%,rgba(248,251,251,0.84)_42%,rgba(248,251,251,0.38)_100%)] sm:bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.97)_34%,rgba(248,251,251,0.78)_58%,rgba(248,251,251,0.28)_100%)] lg:bg-[linear-gradient(to_right,#f8fbfb_0%,rgba(248,251,251,0.99)_34%,rgba(248,251,251,0.88)_49%,rgba(248,251,251,0.28)_72%,rgba(248,251,251,0.08)_100%)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(248,251,251,0.99)_0%,rgba(248,251,251,0.96)_34%,rgba(248,251,251,0.82)_52%,rgba(248,251,251,0.38)_76%,rgba(248,251,251,0.14)_100%)] sm:bg-[linear-gradient(to_bottom,rgba(248,251,251,0.98)_0%,rgba(248,251,251,0.90)_34%,rgba(248,251,251,0.62)_58%,rgba(248,251,251,0.20)_100%)] lg:bg-[linear-gradient(to_right,rgba(248,251,251,0.97)_0%,rgba(248,251,251,0.91)_25%,rgba(248,251,251,0.62)_43%,rgba(248,251,251,0.18)_63%,rgba(248,251,251,0.04)_100%)]"
           aria-hidden="true"
         />
         <div className="container relative grid min-h-0 items-start py-8 pb-12 sm:min-h-[620px] sm:items-center sm:py-14 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
