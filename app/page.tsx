@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Clock3, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
 import { MobileNav } from "@/components/mobile-nav";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
