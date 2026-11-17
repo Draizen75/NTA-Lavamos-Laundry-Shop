@@ -42,17 +42,20 @@ export default function Home() {
       </header>
 
       <section className="relative isolate overflow-hidden bg-background">
-        <div className="absolute inset-0 -z-20" aria-hidden="true">
+        <div className="pointer-events-none absolute inset-0 -z-20" aria-hidden="true">
           <Image
             src="/lavamos%20shop.jpg"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[62%_center] lg:object-[68%_center]"
+            className="object-cover object-[58%_78%] sm:object-[62%_65%] lg:object-[72%_center]"
           />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/95 to-background/65 sm:via-background/90 sm:to-background/45 lg:bg-gradient-to-r lg:from-background lg:via-background/95 lg:via-[45%] lg:to-background/15" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.99)_38%,rgba(248,251,251,0.9)_58%,rgba(248,251,251,0.48)_100%)] sm:bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.97)_34%,rgba(248,251,251,0.78)_58%,rgba(248,251,251,0.28)_100%)] lg:bg-[linear-gradient(to_right,#f8fbfb_0%,rgba(248,251,251,0.99)_34%,rgba(248,251,251,0.88)_49%,rgba(248,251,251,0.28)_72%,rgba(248,251,251,0.08)_100%)]"
+          aria-hidden="true"
+        />
         <div className="container relative grid min-h-[680px] items-center py-12 sm:min-h-[720px] sm:py-16 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
           <div className="relative z-10 max-w-[650px]">
             <Badge variant="secondary" className="border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
