@@ -40,9 +40,6 @@ export default function Home() {
         </nav>
         <MobileNav phoneHref={business.phoneHref} facebookHref={business.facebook} />
       </header>
-      <nav aria-label="Quick navigation" className="container grid grid-cols-2 gap-x-4 gap-y-3 border-t border-border/70 py-3 text-xs font-semibold text-brand-deep sm:flex sm:flex-wrap sm:gap-5 lg:hidden">
-        <Link className="shrink-0" href="#services">Services & rates</Link><Link className="shrink-0" href="#gallery">Our shop</Link><Link className="shrink-0" href="#about">About</Link><Link className="shrink-0" href="#visit">Location & hours</Link>
-      </nav>
 
       <section className="container grid items-center gap-8 pb-12 pt-7 sm:gap-10 sm:pb-16 sm:pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:pb-24 lg:pt-12">
         <div className="relative z-10">
