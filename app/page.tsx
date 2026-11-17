@@ -5,6 +5,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { BackToTop } from "@/components/back-to-top";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { formatPrice, fullServiceRates, selfServiceRates, serviceSurcharges } from "@/lib/pricing";
 
 const business = {
   name: "NTA Lavamos Laundry Shop",
@@ -109,10 +110,12 @@ export default function Home() {
               </div>
               <CardContent className="p-4 sm:p-6">
                 <ul className="divide-y divide-border">
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">With detergent and fabcon</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱190.00</strong></li>
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">No detergent or fabcon</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱175.00</strong></li>
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Fabcon only (no detergent)</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱185.00</strong></li>
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Detergent only (no fabcon)</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱180.00</strong></li>
+                  {fullServiceRates.map((rate) => (
+                    <li key={rate.id} className="flex items-start justify-between gap-4 py-4 text-sm">
+                      <span className="font-semibold text-brand-deep">{rate.label}</span>
+                      <strong className="whitespace-nowrap text-lg font-black text-brand-red">{formatPrice(rate.price)}</strong>
+                    </li>
+                  ))}
                 </ul>
                 <p className="mt-4 rounded-xl bg-brand-red-soft p-4 text-xs leading-5 text-brand-red">For detergent and fabcon add-ons, refer to the shop&apos;s price list.</p>
               </CardContent>
@@ -125,12 +128,12 @@ export default function Home() {
               </div>
               <CardContent className="p-6">
                 <ul className="divide-y divide-border">
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Wash only</span><strong className="text-lg font-black text-brand-blue">₱70.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Dry only</span><strong className="text-lg font-black text-brand-blue">₱75.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Spin dry</span><strong className="text-lg font-black text-brand-blue">₱15.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Fold</span><strong className="text-lg font-black text-brand-blue">₱20.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional wash (24 mins)</span><strong className="text-lg font-black text-brand-blue">₱50.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional dry (5 mins)</span><strong className="text-lg font-black text-brand-blue">₱10.00</strong></li>
+                  {selfServiceRates.map((rate) => (
+                    <li key={rate.id} className="flex items-center justify-between gap-4 py-3 text-sm">
+                      <span className="font-semibold text-brand-deep">{rate.label}</span>
+                      <strong className="text-lg font-black text-brand-blue">{formatPrice(rate.price)}</strong>
+                    </li>
+                  ))}
                 </ul>
                 <p className="mt-4 rounded-xl bg-brand-blue-soft p-4 text-xs leading-5 text-brand-deep">Available upon request and subject to machine availability and laundry volume.</p>
               </CardContent>
@@ -149,8 +152,8 @@ export default function Home() {
                   </div>
                   <div className="rounded-2xl bg-brand-red-soft p-5">
                     <h3 className="font-extrabold text-brand-deep">Rush service</h3>
-                    <p className="mt-1 text-2xl font-black text-brand-red">+₱50 / load</p>
-                    <p className="mt-3 text-xs leading-5 text-muted-foreground">Priority processing. Available upon request and subject to machine availability and laundry volume. Comforters, bulky items and special loads may require additional processing time.</p>
+                    <p className="mt-1 text-2xl font-black text-brand-red">+{formatPrice(serviceSurcharges.rush.amount)} / {serviceSurcharges.rush.unit}</p>
+                    <p className="mt-3 text-xs leading-5 text-muted-foreground">{serviceSurcharges.rush.description}</p>
                   </div>
                 </div>
               </CardContent>
