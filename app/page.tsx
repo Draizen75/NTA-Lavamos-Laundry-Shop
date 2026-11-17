@@ -26,7 +26,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/95 shadow-sm backdrop-blur-sm">
         <div className="container relative flex h-[76px] items-center justify-between">
         <Link href="#" className="flex items-center gap-3" aria-label="NTA Lavamos home">
-          <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-12 w-auto rounded-md object-contain" />
+          <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-9 w-auto rounded-md object-contain sm:h-12" />
           <span className="sr-only">NTA Lavamos Laundry Shop · Bato</span>
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-4 text-xs font-semibold text-brand-deep lg:flex xl:text-sm">
