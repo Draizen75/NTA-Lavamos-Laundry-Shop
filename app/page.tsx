@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Clock3, Facebook, MapPin, Phone, Star } from "lucide-react";
+import { ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,11 +10,10 @@ const business = {
   phone: "+63 905 563 0585",
   phoneHref: "tel:+639055630585",
   hours: "Daily, 7:00 AM – 7:00 PM",
-  placeId: "ChIJ8QQwaWaZoTMRW1FCsxNjFJk",
   facebook: "https://www.facebook.com/profile.php?id=100090370825470",
 };
 
-const mapQuery = encodeURIComponent(business.address);
+const mapQuery = encodeURIComponent(business.name + ", " + business.address);
 const mapEmbed = "https://www.google.com/maps?q=" + mapQuery + "&t=k&z=18&output=embed";
 const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(business.name + ", " + business.address);
 
@@ -243,7 +242,7 @@ export default function Home() {
 
       <section id="contact" className="bg-brand-deep text-white">
         <div className="container flex flex-col gap-6 py-14 sm:flex-row sm:items-center sm:justify-between">
-          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-[#a8d6c9]">Need laundry service?</p><h2 className="mt-3 text-3xl font-black sm:text-4xl">Call NTA Lavamos.</h2><p className="mt-2 text-sm text-white/70">Ask about available services, rates, and order turnaround.</p></div>
+          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan">Need laundry service?</p><h2 className="mt-3 text-3xl font-black sm:text-4xl">Call NTA Lavamos.</h2><p className="mt-2 text-sm text-white/70">Ask about available services, rates, and order turnaround.</p></div>
           <a href={business.phoneHref} className="inline-flex h-12 shrink-0 items-center justify-center gap-3 rounded-lg bg-brand-cyan px-6 text-sm font-bold text-brand-deep transition hover:bg-brand-cyan/85"><Phone size={17} /> {business.phone}</a>
         </div>
       </section>
