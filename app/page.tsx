@@ -32,9 +32,8 @@ export default function Home() {
           <Link className="transition-colors hover:text-primary" href="#gallery">Our shop</Link>
           <Link className="transition-colors hover:text-primary" href="#visit">Location & hours</Link>
           <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
-          <a href={business.phoneHref} className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"><Phone size={15} /> Call the shop</a>
         </nav>
-        <MobileNav phoneHref={business.phoneHref} facebookHref={business.facebook} />
+        <MobileNav facebookHref={business.facebook} />
       </header>
 
       <section className="relative isolate overflow-hidden bg-background">
