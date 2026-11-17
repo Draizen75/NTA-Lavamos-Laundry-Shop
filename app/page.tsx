@@ -1,86 +1,249 @@
-'use client';
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
+import { MobileNav } from "@/components/mobile-nav";
+import { BackToTop } from "@/components/back-to-top";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { formatPrice, fullServiceRates, selfServiceRates, serviceSurcharges } from "@/lib/pricing";
 
-import { useState } from 'react';
-import { ArrowRight, Check, Clock3, Droplets, Facebook, Heart, MapPin, Menu, Phone, Shirt, Sparkles, Truck, WashingMachine, X } from 'lucide-react';
+const business = {
+  name: "NTA Lavamos Laundry Shop",
+  address: "9968+PPX, Poblacion Road, Bato, Camarines Sur, Philippines",
+  phone: "+63 905 563 0585",
+  phoneHref: "tel:+639055630585",
+  hours: "Daily, 7:00 AM – 7:00 PM",
+  facebook: "https://www.facebook.com/profile.php?id=100090370825470",
+};
 
-const services = [
-  { icon: Shirt, title: 'Wash & fold', text: 'Everyday clothes washed, dried, and neatly folded. Final service details to be confirmed.' },
-  { icon: Sparkles, title: 'Freshen up', text: 'A convenient refresh for your weekly laundry routine. Available options to be confirmed.' },
-  { icon: Truck, title: 'Pickup & delivery', text: 'Want laundry picked up or delivered? Ask the shop if this service is available.' },
-];
-
-const steps = [
-  ['01', 'Bring your laundry', 'Visit the shop during confirmed business hours.'],
-  ['02', 'Choose your service', 'The team can explain available services, rates, and turnaround time.'],
-  ['03', 'Pick up fresh', 'Collect your clean laundry when your order is ready.'],
-];
+const mapQuery = encodeURIComponent(business.name + ", " + business.address);
+const mapEmbed = "https://www.google.com/maps?q=" + mapQuery + "&t=k&z=18&output=embed";
+const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(business.name + ", " + business.address);
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [form, setForm] = useState({ name: '', phone: '', service: 'Wash & fold', message: '' });
-  const [sent, setSent] = useState(false);
-
-  const submitInquiry = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Laundry inquiry from ${form.name || 'website visitor'}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nContact: ${form.phone}\nService: ${form.service}\nMessage: ${form.message}\n\nPlease replace the placeholder email address in app/page.tsx before launch.`);
-    window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
-    setSent(true);
-  };
-
-  const closeMenu = () => setMenuOpen(false);
-
   return (
-    <main>
-      <div className="announcement"><span className="announcement-dot" /> A little more fresh in every load <span className="announcement-divider">✳</span> Proudly local to Bato <span className="announcement-sparkle">✦</span></div>
-      <header className="site-header">
-        <a className="brand" href="#home" aria-label="NTA Lavamos home" onClick={closeMenu}>
-          <span className="brand-mark"><Droplets size={25} strokeWidth={2.4} /></span>
-          <span className="brand-copy"><strong>NTA <em>Lavamos</em></strong><small>LAUNDRY SHOP · BATO</small></span>
-        </a>
-        <button className="mobile-toggle" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
-        <nav className={menuOpen ? 'nav nav-open' : 'nav'}>
-          <a href="#services" onClick={closeMenu}>Our services</a><a href="#how-it-works" onClick={closeMenu}>How it works</a><a href="#about" onClick={closeMenu}>About us</a><a href="#visit" onClick={closeMenu}>Find us</a>
-          <a className="nav-cta" href="#contact" onClick={closeMenu}>Get in touch <ArrowRight size={16} /></a>
+    <main id="top" className="overflow-x-clip">
+      <header className="container relative z-50 flex h-[76px] items-center justify-between border-b border-border/70 bg-background/95 backdrop-blur-sm">
+        <Link href="#" className="flex items-center gap-3" aria-label="NTA Lavamos home">
+          <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-12 w-auto rounded-md object-contain" />
+          <span className="sr-only">NTA Lavamos Laundry Shop · Bato</span>
+        </Link>
+        <nav aria-label="Main navigation" className="hidden items-center gap-4 text-xs font-semibold text-brand-deep lg:flex xl:text-sm">
+          <Link className="transition-colors hover:text-primary" href="#services">Services & rates</Link>
+          <Link className="transition-colors hover:text-primary" href="#gallery">Our shop</Link>
+          <Link className="transition-colors hover:text-primary" href="#visit">Location & hours</Link>
+          <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
         </nav>
+        <MobileNav facebookHref={business.facebook} />
       </header>
 
-      <section className="hero" id="home">
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-line" /> YOUR NEIGHBORHOOD LAUNDRY FRIEND</div>
-          <h1>Fresh clothes.<br /><span>Happier days.</span></h1>
-          <p className="hero-description">Laundry day feels lighter when someone’s got your back. Let us help make your everyday a little fresher.</p>
-          <div className="hero-actions"><a className="button button-primary" href="#contact">Ask us about laundry <ArrowRight size={18} /></a><a className="text-link" href="#services">Explore services <span>↗</span></a></div>
-          <div className="hero-trust"><div className="avatar-stack"><span>☺</span><span>✿</span><span>♡</span></div><div><strong>A friendly local touch</strong><small>Here for the Bato community</small></div><span className="trust-heart"><Heart size={18} fill="currentColor" /></span></div>
+      <section className="relative isolate overflow-hidden bg-background">
+        <div className="pointer-events-none absolute inset-0 -z-20" aria-hidden="true">
+          <Image
+            src="/lavamos%20shop.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[58%_center] sm:object-[62%_center] lg:object-[58%_center]"
+          />
         </div>
-        <div className="hero-visual">
-          <div className="visual-blob" />
-          <div className="photo-frame"><img src="https://images.unsplash.com/photo-1604335399105-0c5a2e2c7f0a?auto=format&fit=crop&w=1100&q=85" alt="Fresh folded laundry and a clean, bright laundry space" /></div>
-          <div className="floating-note note-top"><span className="note-icon"><Sparkles size={19} /></span><span><strong>A fresh start</strong><small>One load at a time</small></span></div>
-          <div className="floating-note note-bottom"><span className="note-icon note-blue"><WashingMachine size={20} /></span><span><strong>Made for your routine</strong><small>Easy, everyday laundry care</small></span></div>
-          <div className="sun-doodle">✳</div><div className="dot-pattern" />
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(248,251,251,0.99)_0%,rgba(248,251,251,0.98)_38%,rgba(248,251,251,0.96)_58%,rgba(248,251,251,0.91)_78%,rgba(248,251,251,0.84)_100%)] sm:bg-[linear-gradient(to_bottom,rgba(248,251,251,0.98)_0%,rgba(248,251,251,0.90)_34%,rgba(248,251,251,0.62)_58%,rgba(248,251,251,0.20)_100%)] lg:bg-[linear-gradient(to_right,rgba(248,251,251,0.97)_0%,rgba(248,251,251,0.91)_25%,rgba(248,251,251,0.62)_43%,rgba(248,251,251,0.18)_63%,rgba(248,251,251,0.04)_100%)]"
+          aria-hidden="true"
+        />
+        <div className="container relative grid min-h-0 items-start py-8 pb-12 sm:min-h-[620px] sm:items-center sm:py-14 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+          <div className="relative z-10 max-w-[650px]">
+            <Badge variant="secondary" className="border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
+            <h1 className="mt-5 max-w-[650px] text-[clamp(2.75rem,9vw,5.8rem)] font-black leading-[0.98] tracking-[-0.065em] text-brand-deep sm:mt-6">
+              Fresh clothes.<br /><span className="text-primary">Lighter days.</span>
+            </h1>
+            <p className="mt-5 max-w-lg text-sm leading-7 text-muted-foreground sm:mt-6 sm:text-base sm:leading-8">
+              Looking for a nearby laundry service in Bato? Visit NTA Lavamos Laundry Shop along Poblacion Road or call ahead to ask about current services and rates.
+            </p>
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call the shop</a>
+              <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-1 rounded-lg border border-brand-deep/10 bg-white/90 px-4 text-sm font-bold text-brand-deep shadow-sm transition hover:border-primary hover:text-primary sm:justify-start sm:gap-0 sm:border-0 sm:bg-transparent sm:px-3 sm:shadow-none">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
+            </div>
+            <div className="mt-8 inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-white/80 bg-white/85 px-3 py-2 text-xs text-muted-foreground shadow-sm backdrop-blur-sm sm:mt-10 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-brand-red" />
+              <strong className="text-brand-deep">Wash · Dry · Fold</strong>
+              <span>Full-service and self-service options</span>
+            </div>
+          </div>
         </div>
-        <div className="hero-bottom"><span>GOOD CARE, GOOD DAY</span><span className="hero-bottom-line" /><span>SCROLL TO DISCOVER ↓</span></div>
       </section>
 
-      <section className="welcome-strip"><div className="welcome-icon"><Heart size={22} /></div><p><strong>Hey, Bato!</strong> Your laundry deserves a little love. We’re happy you stopped by.</p><span className="welcome-flower">✿</span></section>
-
-      <section className="section services-section" id="services">
-        <div className="section-heading"><div><div className="eyebrow"><span className="eyebrow-line" /> LESS LAUNDRY STRESS</div><h2>Care for your clothes,<br /><span>care for your day.</span></h2></div><p>From the weekly pile-up to the little things in between, find the laundry help that fits your routine.</p></div>
-        <div className="service-grid">{services.map(({ icon: Icon, title, text }, i) => <article className="service-card" key={title}><div className={`service-icon service-icon-${i}`}><Icon size={25} /></div><span className="card-number">0{i + 1}</span><h3>{title}</h3><p>{text}</p><a href="#contact" className="card-link">Ask about this service <ArrowRight size={16} /></a></article>)}</div>
-        <div className="service-footnote"><span>✳</span> Don’t see what you need? Just ask us — we’d love to help.</div>
+      <section id="gallery" className="bg-background py-14 sm:py-20 lg:py-24">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Inside NTA Lavamos</p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-brand-deep sm:text-5xl">A closer look at our shop.</h2>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">See the laundry machines and customer area at our Bato location.</p>
+          </div>
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 md:grid-cols-2">
+            <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+              <Image src="/lavamos%20shop.jpg" alt="Commercial washer and dryer machines inside NTA Lavamos Laundry Shop" width={1024} height={1365} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
+              <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our laundry machines</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
+              <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Weighing and laundry area</figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
-      <section className="process-section" id="how-it-works"><div className="process-inner"><div className="process-heading"><div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> EASY AS 1, 2, 3</div><h2>A simpler laundry<br /><span>kind of day.</span></h2><p>No fuss, no guesswork. Here’s how to get started with your next load.</p><a className="button button-light" href="#contact">Let’s get started <ArrowRight size={17} /></a></div><div className="steps">{steps.map(([number, title, text]) => <div className="step" key={number}><span className="step-number">{number}</span><div><h3>{title}</h3><p>{text}</p></div><Check className="step-check" size={20} /></div>)}</div><div className="process-flower">✿</div></div></section>
+      <section id="services" className="bg-brand-mint/70 py-14 sm:py-20 lg:py-24">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Services & pricing</p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-brand-deep sm:text-5xl">Laundry made simple.</h2>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">Choose full-service laundry or use the self-service machines. Prices below follow the shop&apos;s supplied rate poster.</p>
+          </div>
 
-      <section className="about-section section" id="about"><div className="about-photo"><img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1000&q=85" alt="Fresh clean laundry neatly arranged" /><div className="about-sticker"><span>LOCAL</span><strong>LOVE</strong><small>✳ BATO, CAMARINES SUR ✳</small></div></div><div className="about-copy"><div className="eyebrow"><span className="eyebrow-line" /> A LITTLE ABOUT US</div><h2>Your local laundry<br />stop, with a <span>lot of heart.</span></h2><p className="about-lead">We’re NTA Lavamos Laundry Shop, part of the neighborhood here in Bato.</p><p>We believe taking care of your clothes should feel simple and welcoming. Whether it’s your weekly wash or a busy-day backup, we’re here to make laundry one less thing on your mind.</p><div className="about-points"><div><span>♡</span> Friendly neighborhood service</div><div><span>✳</span> Everyday laundry convenience</div></div><a className="text-link" href="#visit">Come say hello <span>↗</span></a></div></section>
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 lg:grid-cols-2">
+            <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
+              <div className="bg-brand-red px-6 py-5 text-white">
+                <h3 className="text-2xl font-black">Full-service</h3>
+                <p className="mt-1 text-sm text-white/90">Wash, dry and fold</p>
+              </div>
+              <CardContent className="p-4 sm:p-6">
+                <ul className="divide-y divide-border">
+                  {fullServiceRates.map((rate) => (
+                    <li key={rate.id} className="flex items-start justify-between gap-4 py-4 text-sm">
+                      <span className="font-semibold text-brand-deep">{rate.label}</span>
+                      <strong className="whitespace-nowrap text-lg font-black text-brand-red">{formatPrice(rate.price)}</strong>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 rounded-xl bg-brand-red-soft p-4 text-xs leading-5 text-brand-red">For detergent and fabcon add-ons, refer to the shop&apos;s price list.</p>
+              </CardContent>
+            </Card>
 
-      <section className="visit-section" id="visit"><div className="visit-card"><div className="visit-copy"><div className="eyebrow"><span className="eyebrow-line" /> COME ON OVER</div><h2>We’re right<br /><span>around the corner.</span></h2><p>Find us on Poblacion Road in Bato. We’d love to see you!</p><div className="visit-detail"><MapPin size={19} /><span><strong>Find our shop</strong><small>Poblacion Road, Bato, Camarines Sur</small></span></div><div className="visit-detail"><Clock3 size={19} /><span><strong>Shop hours</strong><small>[Confirm opening days and hours]</small></span></div><a className="button button-primary" href="https://www.google.com/maps/search/?api=1&query=NTA+Lavamos+Laundry+Shop+Bato+Camarines+Sur" target="_blank" rel="noreferrer">Open in Google Maps <ArrowRight size={17} /></a></div><div className="map-panel"><div className="map-grid" /><div className="map-road road-one" /><div className="map-road road-two" /><div className="map-road road-three" /><div className="map-pin"><MapPin size={27} fill="currentColor" /></div><div className="map-label"><strong>NTA Lavamos</strong><small>Poblacion Road · Bato</small></div><span className="map-caption">A LITTLE PLACE, A LOT OF FRESH ♡</span></div></div></section>
+            <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
+              <div className="bg-brand-blue px-6 py-5 text-white">
+                <h3 className="text-2xl font-black">Self-service</h3>
+                <p className="mt-1 text-sm text-white/90">Select the machine service you need</p>
+              </div>
+              <CardContent className="p-6">
+                <ul className="divide-y divide-border">
+                  {selfServiceRates.map((rate) => (
+                    <li key={rate.id} className="flex items-center justify-between gap-4 py-3 text-sm">
+                      <span className="font-semibold text-brand-deep">{rate.label}</span>
+                      <strong className="text-lg font-black text-brand-blue">{formatPrice(rate.price)}</strong>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 rounded-xl bg-brand-blue-soft p-4 text-xs leading-5 text-brand-deep">Available upon request and subject to machine availability and laundry volume.</p>
+              </CardContent>
+            </Card>
+          </div>
 
-      <section className="contact-section section" id="contact"><div className="contact-intro"><div className="eyebrow"><span className="eyebrow-line" /> WE’RE ALL EARS</div><h2>Have a question?<br /><span>Let’s talk laundry.</span></h2><p>Need to know about rates, services, or when to drop by? Send us a note and we’ll be happy to help.</p><div className="contact-note"><span>✿</span><p><strong>Prefer a quick chat?</strong><br />Call or message us using the shop’s confirmed contact details.</p></div></div><form className="contact-form" onSubmit={submitInquiry}><div className="form-heading"><h3>Send an inquiry</h3><p>We’ll point you in the right direction.</p></div><label>Your name<input required value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="e.g. Juan dela Cruz" /></label><label>Contact number<input value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} placeholder="Your mobile number" /></label><label>What can we help with?<select value={form.service} onChange={e => setForm({ ...form, service: e.target.value })}><option>Wash & fold</option><option>Rates and turnaround</option><option>Pickup & delivery availability</option><option>Other question</option></select></label><label>Your message<textarea rows={3} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} placeholder="Tell us what you need..." /></label><button className="button button-primary form-submit" type="submit">Send inquiry <ArrowRight size={17} /></button><small className="form-disclaimer">Demo form: replace hello@example.com with the shop’s approved email before launch.</small>{sent && <p className="form-success" role="status">Your email app should open with your inquiry. This demo uses a placeholder email address.</p>}</form></section>
+          <div className="mt-5 grid gap-5 sm:mt-6 sm:gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <Card className="rounded-3xl border-0 shadow-sm">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Service turnaround</p>
+                <div className="mt-5 grid gap-4 md:grid-cols-2">
+                  <div className="rounded-2xl bg-brand-blue-soft p-5">
+                    <h3 className="font-extrabold text-brand-deep">Regular service</h3>
+                    <p className="mt-1 text-2xl font-black text-primary">No extra fee</p>
+                    <p className="mt-3 text-xs leading-5 text-muted-foreground">Processed according to the regular queue. Same-day service may be available when daily capacity allows. During peak periods, orders may be scheduled for next-day or later pickup.</p>
+                  </div>
+                  <div className="rounded-2xl bg-brand-red-soft p-5">
+                    <h3 className="font-extrabold text-brand-deep">Rush service</h3>
+                    <p className="mt-1 text-2xl font-black text-brand-red">+{formatPrice(serviceSurcharges.rush.amount)} / {serviceSurcharges.rush.unit}</p>
+                    <p className="mt-3 text-xs leading-5 text-muted-foreground">{serviceSurcharges.rush.description}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-      <footer className="footer"><div className="footer-main"><a className="brand brand-footer" href="#home"><span className="brand-mark"><Droplets size={24} /></span><span className="brand-copy"><strong>NTA <em>Lavamos</em></strong><small>LAUNDRY SHOP · BATO</small></span></a><p>A little more fresh in every load.<br />Made with care for our Bato neighbors.</p><div className="footer-social"><a href="#contact" aria-label="Contact"><Phone size={17} /></a><a href="#contact" aria-label="Facebook page placeholder"><Facebook size={17} /></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} NTA Lavamos Laundry Shop. Demo concept.</span><span>Made with <Heart size={13} fill="currentColor" /> in Bicol</span></div></footer>
-      <div className="demo-ribbon">CONCEPT PREVIEW · BUSINESS DETAILS NEED OWNER APPROVAL</div>
+            <Card className="rounded-3xl border-0 shadow-sm">
+              <CardContent className="p-6 sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Laundry load capacity</p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
+                  <div className="rounded-2xl bg-brand-mint p-4"><p className="text-sm font-extrabold text-brand-deep">Light load</p><p className="mt-1 text-2xl font-black text-primary">8 kg</p><p className="mt-1 text-xs text-muted-foreground">T-shirts, shorts, underwear, thin pajamas, blouses and other lightweight garments.</p></div>
+                  <div className="rounded-2xl bg-brand-blue-soft p-4"><p className="text-sm font-extrabold text-brand-deep">Standard mixed load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">A combination of light and regular garments such as shirts, pants and pajamas.</p></div>
+                  <div className="rounded-2xl bg-brand-red-soft p-4"><p className="text-sm font-extrabold text-brand-deep">Heavy load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">Jeans, denim clothing, towels, curtains, hoodies, sweatshirts and jackets.</p></div>
+                  <div className="rounded-2xl bg-brand-red-soft p-4"><p className="text-sm font-extrabold text-brand-deep">Comforter</p><p className="mt-1 text-2xl font-black text-primary">1 piece</p><p className="mt-1 text-xs text-muted-foreground">One comforter per load.</p></div>
+                </div>
+                <p className="mt-4 text-[11px] leading-5 text-muted-foreground"><strong className="text-brand-deep">Important:</strong> Load capacity may be reduced depending on size, thickness, weight and type of laundry to ensure proper washing and drying.</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-5 text-muted-foreground">Please contact NTA Lavamos to confirm availability and any current price-list updates before visiting.</p>
+        </div>
+      </section>
+
+      <section id="visit" className="container pb-14 sm:pb-20 lg:pb-28">
+        <div className="grid overflow-hidden rounded-3xl bg-brand-mint lg:grid-cols-[0.78fr_1.22fr]">
+          <div className="p-8 sm:p-12">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Find the shop</p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-brand-deep">Visit <span className="text-primary">NTA Lavamos.</span></h2>
+            <div className="mt-8 space-y-6">
+              <div className="flex items-start gap-3"><MapPin className="mt-0.5 text-primary" size={20} /><span><strong className="block text-sm text-brand-deep">Address</strong><span className="text-sm leading-6 text-muted-foreground">{business.address}</span></span></div>
+              <div className="flex items-start gap-3"><Clock3 className="mt-0.5 text-primary" size={20} /><span><strong className="block text-sm text-brand-deep">Opening hours</strong><span className="text-sm text-muted-foreground">{business.hours}</span></span></div>
+              <div className="flex items-start gap-3"><Phone className="mt-0.5 text-primary" size={20} /><span><strong className="block text-sm text-brand-deep">Phone</strong><a className="text-sm text-primary hover:underline" href={business.phoneHref}>{business.phone}</a></span></div>
+            </div>
+            <a href={mapLink} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-white hover:bg-primary/90 sm:w-auto">Open in Google Maps <ArrowUpRight size={16} /></a>
+          </div>
+          <div className="h-[300px] bg-brand-mint sm:h-[380px] lg:h-auto lg:min-h-[420px]">
+            <iframe
+              title="Interactive Google Map showing NTA Lavamos Laundry Shop in Bato, Camarines Sur"
+              src={mapEmbed}
+              width="100%"
+              height="100%"
+              className="h-full min-h-[300px] w-full border-0 sm:min-h-[380px] lg:min-h-[420px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-brand-deep text-white">
+        <div className="container border-t border-white/10 py-10 sm:py-12">
+          <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr] lg:gap-12">
+            <div>
+              <Link href="#" aria-label="NTA Lavamos home" className="inline-flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+                <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} className="h-12 w-auto rounded-md object-contain" />
+              </Link>
+              <h2 className="mt-4 text-lg font-extrabold tracking-tight">NTA Lavamos Laundry Shop</h2>
+              <p className="mt-2 max-w-sm text-sm leading-6 text-white/70">Your neighborhood laundry shop in Bato, Camarines Sur. Choose full-service or self-service laundry options.</p>
+              <a href={business.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit NTA Lavamos on Facebook (opens in a new tab)" className="mt-4 inline-flex min-h-10 items-center gap-2 rounded-md text-sm font-semibold text-white/85 transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+                <Facebook size={16} /> Follow us on Facebook <ArrowUpRight size={14} />
+              </a>
+            </div>
+
+            <nav aria-label="Footer navigation">
+              <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-brand-cyan">Explore</h3>
+              <ul className="mt-4 space-y-3 text-sm text-white/75">
+                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#services">Services & rates</Link></li>
+                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#gallery">Our shop</Link></li>
+                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#visit">Location & hours</Link></li>
+              </ul>
+            </nav>
+
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-brand-cyan">Visit or contact</h3>
+              <ul className="mt-4 space-y-4 text-sm">
+                <li className="flex items-start gap-3"><MapPin size={17} className="mt-0.5 shrink-0 text-brand-cyan" /><div><span className="block font-semibold text-white">Address</span><a href={mapLink} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block leading-6 text-white/70 transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan">Poblacion Road, Bato, Camarines Sur</a></div></li>
+                <li className="flex items-start gap-3"><Phone size={17} className="mt-0.5 shrink-0 text-brand-cyan" /><div><span className="block font-semibold text-white">Phone</span><a href={business.phoneHref} className="mt-1 inline-block text-white/70 transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan">{business.phone}</a></div></li>
+                <li className="flex items-start gap-3"><Clock3 size={17} className="mt-0.5 shrink-0 text-brand-cyan" /><div><span className="block font-semibold text-white">Opening hours</span><span className="mt-1 block text-white/70">{business.hours}</span></div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-9 border-t border-white/10 pt-5 text-xs text-white/55">
+            <p>© {new Date().getFullYear()} NTA Lavamos Laundry Shop. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <BackToTop />
     </main>
   );
 }
