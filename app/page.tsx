@@ -246,9 +246,43 @@ export default function Home() {
       </section>
 
       <footer className="bg-brand-deep text-white">
-        <div className="container flex flex-col gap-5 border-t border-white/10 py-7 sm:gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3"><Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={96} height={54} className="h-10 w-auto rounded-md object-contain" /><span className="text-[10px] text-white/65">Laundry Shop · Bato, Camarines Sur</span></div>
-          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4"><a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 transition hover:text-white"><Facebook size={15} /> Facebook page <ArrowUpRight size={13} /></a><p className="text-xs text-white/60">© {new Date().getFullYear()} NTA Lavamos Laundry Shop.</p></div>
+        <div className="container border-t border-white/10 py-10 sm:py-12">
+          <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr] lg:gap-12">
+            <div>
+              <Link href="#" aria-label="NTA Lavamos home" className="inline-flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+                <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} className="h-12 w-auto rounded-md object-contain" />
+              </Link>
+              <h2 className="mt-4 text-lg font-extrabold tracking-tight">NTA Lavamos Laundry Shop</h2>
+              <p className="mt-2 max-w-sm text-sm leading-6 text-white/70">Your neighborhood laundry shop in Bato, Camarines Sur. Choose full-service or self-service laundry options.</p>
+              <a href={business.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit NTA Lavamos on Facebook (opens in a new tab)" className="mt-4 inline-flex min-h-10 items-center gap-2 rounded-md text-sm font-semibold text-white/85 transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+                <Facebook size={16} /> Follow us on Facebook <ArrowUpRight size={14} />
+              </a>
+            </div>
+
+            <nav aria-label="Footer navigation">
+              <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-brand-cyan">Explore</h3>
+              <ul className="mt-4 space-y-3 text-sm text-white/75">
+                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#services">Services & rates</Link></li>
+                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#gallery">Our shop</Link></li>
+                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#about">About us</Link></li>
+                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#visit">Location & hours</Link></li>
+              </ul>
+            </nav>
+
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-brand-cyan">Visit or contact</h3>
+              <ul className="mt-4 space-y-4 text-sm">
+                <li className="flex items-start gap-3"><MapPin size={17} className="mt-0.5 shrink-0 text-brand-cyan" /><div><span className="block font-semibold text-white">Address</span><a href={mapLink} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block leading-6 text-white/70 transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan">Poblacion Road, Bato, Camarines Sur</a></div></li>
+                <li className="flex items-start gap-3"><Phone size={17} className="mt-0.5 shrink-0 text-brand-cyan" /><div><span className="block font-semibold text-white">Phone</span><a href={business.phoneHref} className="mt-1 inline-block text-white/70 transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan">{business.phone}</a></div></li>
+                <li className="flex items-start gap-3"><Clock3 size={17} className="mt-0.5 shrink-0 text-brand-cyan" /><div><span className="block font-semibold text-white">Opening hours</span><span className="mt-1 block text-white/70">{business.hours}</span></div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-9 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} NTA Lavamos Laundry Shop. All rights reserved.</p>
+            <a href="#top" className="w-fit transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan">Back to top ↑</a>
+          </div>
         </div>
       </footer>
     </main>
