@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Clock3, MapPin, Phone, Star, WashingMachine } from "lucide-react";
+import { ArrowUpRight, Clock3, Facebook, MapPin, Phone, Star, WashingMachine } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,6 +10,7 @@ const business = {
   phoneHref: "tel:+639055630585",
   hours: "Daily, 7:00 AM – 7:00 PM",
   placeId: "ChIJ8QQwaWaZoTMRW1FCsxNjFJk",
+  facebook: "https://www.facebook.com/profile.php?id=100090370825470",
 };
 
 const mapEmbed = "https://www.google.com/maps?q=place_id:" + business.placeId + "&output=embed";
@@ -35,9 +36,10 @@ export default function Home() {
         <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm font-semibold text-brand-deep md:flex">
           <Link className="transition-colors hover:text-primary" href="#about">About</Link>
           <Link className="transition-colors hover:text-primary" href="#visit">Location & hours</Link>
+          <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
           <a href={business.phoneHref} className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"><Phone size={15} /> Call the shop</a>
         </nav>
-        <a href={business.phoneHref} className="rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white md:hidden">Call now</a>
+        <div className="flex items-center gap-2 md:hidden"><a href={business.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit NTA Lavamos on Facebook" className="grid h-10 w-10 place-items-center rounded-lg border border-border text-primary"><Facebook size={18} /></a><a href={business.phoneHref} className="rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white">Call now</a></div>
       </header>
 
       <section className="container grid items-center gap-10 pb-16 pt-8 md:grid-cols-[1.02fr_0.98fr] md:pb-24 md:pt-12">
@@ -141,7 +143,7 @@ export default function Home() {
       <footer className="bg-brand-deep text-white">
         <div className="container flex flex-col gap-5 border-t border-white/10 py-7 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-xl bg-white/10 text-[#a8d6c9]"><WashingMachine size={19} /></span><span><strong className="block text-sm">NTA Lavamos</strong><span className="text-[10px] text-white/55">Laundry Shop · Bato, Camarines Sur</span></span></div>
-          <p className="text-xs text-white/60">© {new Date().getFullYear()} NTA Lavamos Laundry Shop.</p>
+          <div className="flex items-center gap-4"><a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 transition hover:text-white"><Facebook size={15} /> Facebook page <ArrowUpRight size={13} /></a><p className="text-xs text-white/60">© {new Date().getFullYear()} NTA Lavamos Laundry Shop.</p></div>
         </div>
       </footer>
     </main>
