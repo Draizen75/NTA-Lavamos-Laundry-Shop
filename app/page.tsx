@@ -22,10 +22,6 @@ const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURICo
 export default function Home() {
   return (
     <main id="top" className="overflow-x-clip">
-      <div className="bg-brand-deep px-4 py-2 text-center text-[10px] font-semibold tracking-[0.16em] text-white sm:text-xs">
-        YOUR LOCAL LAUNDRY SHOP IN BATO
-      </div>
-
       <header className="container flex h-[76px] items-center justify-between">
         <Link href="#" className="flex items-center gap-3" aria-label="NTA Lavamos home">
           <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-12 w-auto rounded-md object-contain" />
@@ -66,12 +62,13 @@ export default function Home() {
               Looking for a nearby laundry service in Bato? Visit NTA Lavamos Laundry Shop along Poblacion Road or call ahead to ask about current services and rates.
             </p>
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call {business.phone}</a>
+              <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call the shop</a>
               <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center px-3 text-sm font-bold text-brand-deep hover:text-primary sm:justify-start">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
             </div>
-            <div className="mt-8 flex flex-col items-start gap-3 text-xs text-muted-foreground sm:mt-10 md:flex-row md:flex-wrap md:items-center md:gap-x-6 md:gap-y-3">
-              <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-brand-red" /><strong className="text-brand-deep">Wash · Dry · Fold</strong> Full-service and self-service options</span>
-              <span className="flex items-center gap-2"><Clock3 size={16} /><strong className="text-brand-deep">7 AM – 7 PM</strong> listed daily hours</span>
+            <div className="mt-8 flex items-center gap-2 text-xs text-muted-foreground sm:mt-10">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-brand-red" />
+              <strong className="text-brand-deep">Wash · Dry · Fold</strong>
+              <span>Full-service and self-service options</span>
             </div>
           </div>
         </div>
