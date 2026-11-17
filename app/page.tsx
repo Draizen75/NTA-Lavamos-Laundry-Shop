@@ -34,7 +34,6 @@ export default function Home() {
         <nav aria-label="Main navigation" className="hidden items-center gap-4 text-xs font-semibold text-brand-deep lg:flex xl:text-sm">
           <Link className="transition-colors hover:text-primary" href="#services">Services & rates</Link>
           <Link className="transition-colors hover:text-primary" href="#gallery">Our shop</Link>
-          <Link className="transition-colors hover:text-primary" href="#about">About</Link>
           <Link className="transition-colors hover:text-primary" href="#visit">Location & hours</Link>
           <a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-4 text-sm font-semibold text-brand-deep transition hover:border-primary hover:text-primary"><Facebook size={15} /> Facebook</a>
           <a href={business.phoneHref} className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"><Phone size={15} /> Call the shop</a>
@@ -77,15 +76,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="border-y border-border bg-brand-mint">
-        <div className="container grid gap-5 py-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8 lg:py-7">
-          <div className="flex items-center gap-3"><MapPin className="text-primary" size={21} /><span><strong className="block text-sm text-brand-deep">Poblacion Road</strong><span className="text-xs text-muted-foreground">Bato, Camarines Sur</span></span></div>
-          <div className="flex items-center gap-3"><Phone className="text-primary" size={21} /><span><strong className="block text-sm text-brand-deep">+63 905 563 0585</strong><span className="text-xs text-muted-foreground">Call the shop</span></span></div>
-          <div className="flex items-center gap-3"><Clock3 className="text-primary" size={21} /><span><strong className="block text-sm text-brand-deep">7:00 AM – 7:00 PM</strong><span className="text-xs text-muted-foreground">Listed daily hours</span></span></div>
-        </div>
-      </section>
-
 
       <section id="gallery" className="bg-background py-14 sm:py-20 lg:py-24">
         <div className="container">
@@ -188,31 +178,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="container grid items-center gap-8 py-14 sm:gap-10 sm:py-20 lg:grid-cols-2 lg:gap-12 lg:py-28">
-        <div className="relative mx-auto h-[280px] w-full max-w-[490px] overflow-hidden rounded-[2rem] bg-brand-mint shadow-soft sm:h-[360px] lg:h-[420px]">
-          <Image
-            src="/lavamos%20shop%201.jpg"
-            alt="Inside NTA Lavamos Laundry Shop, showing the actual shop interior and laundry equipment"
-            width={1400}
-            height={1050}
-            sizes="(max-width: 1023px) calc(100vw - 2.5rem), 490px"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </div>
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">NTA Lavamos Laundry Shop</p>
-          <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-brand-deep sm:text-5xl">Your neighborhood laundry <span className="text-primary">stop.</span></h2>
-          <p className="mt-5 text-sm leading-7 text-muted-foreground">Choose full-service wash, dry and fold or self-service machine options. View the service rates, turnaround choices and load-capacity guidance above, or contact the shop to confirm availability.</p>
-          <Card className="mt-6 rounded-2xl border-border/80 shadow-sm sm:mt-7">
-            <CardContent className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-mint text-primary"><Phone size={20} /></span>
-              <div className="min-w-0 flex-1"><p className="font-extrabold text-brand-deep">Need help choosing a service?</p><p className="mt-1 text-xs leading-5 text-muted-foreground">Call the shop to confirm current rates, machine availability and turnaround.</p></div>
-              <a className="inline-flex h-10 shrink-0 items-center justify-center rounded-lg bg-primary px-4 text-xs font-bold text-white hover:bg-primary/90" href={business.phoneHref}>Call the shop</a>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       <section id="visit" className="container pb-14 sm:pb-20 lg:pb-28">
         <div className="grid overflow-hidden rounded-3xl bg-brand-mint lg:grid-cols-[0.78fr_1.22fr]">
           <div className="p-8 sm:p-12">
@@ -240,13 +205,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-brand-deep text-white">
-        <div className="container flex flex-col gap-5 py-10 sm:gap-6 sm:py-14 md:flex-row md:items-center md:justify-between">
-          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan">Need laundry service?</p><h2 className="mt-3 text-3xl font-black sm:text-4xl">Call NTA Lavamos.</h2><p className="mt-2 text-sm text-white/70">Ask about available services, rates, and order turnaround.</p></div>
-          <a href={business.phoneHref} className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-3 rounded-lg bg-brand-cyan px-6 text-sm font-bold text-brand-deep transition hover:bg-brand-cyan/85 sm:w-auto"><Phone size={17} /> {business.phone}</a>
-        </div>
-      </section>
-
       <footer className="bg-brand-deep text-white">
         <div className="container border-t border-white/10 py-10 sm:py-12">
           <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr] lg:gap-12">
@@ -266,7 +224,6 @@ export default function Home() {
               <ul className="mt-4 space-y-3 text-sm text-white/75">
                 <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#services">Services & rates</Link></li>
                 <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#gallery">Our shop</Link></li>
-                <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#about">About us</Link></li>
                 <li><Link className="transition hover:text-brand-cyan focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan" href="#visit">Location & hours</Link></li>
               </ul>
             </nav>
