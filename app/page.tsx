@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Clock3, Facebook, MapPin, Phone, Star, WashingMachine } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -26,13 +27,8 @@ export default function Home() {
 
       <header className="container flex h-[76px] items-center justify-between">
         <Link href="#" className="flex items-center gap-3" aria-label="NTA Lavamos home">
-          <span className="grid h-11 w-11 place-items-center rounded-2xl rounded-bl-md bg-primary text-white shadow-sm">
-            <WashingMachine size={23} aria-hidden="true" />
-          </span>
-          <span className="leading-tight">
-            <span className="block text-lg font-extrabold tracking-tight text-brand-deep">NTA <span className="text-primary">Lavamos</span></span>
-            <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Laundry shop · Bato</span>
-          </span>
+          <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-12 w-auto rounded-md object-contain" />
+          <span className="sr-only">NTA Lavamos Laundry Shop · Bato</span>
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm font-semibold text-brand-deep md:flex">
           <Link className="transition-colors hover:text-primary" href="#services">Services & rates</Link>
@@ -63,21 +59,20 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative mx-auto flex min-h-[390px] w-full max-w-[530px] items-center justify-center sm:min-h-[470px]">
-          <div className="absolute inset-[7%] rounded-[45%_55%_53%_47%/45%_42%_58%_55%] bg-brand-mint" />
-          <div className="absolute right-[9%] top-[7%] h-16 w-16 rounded-full bg-brand-coral/80" />
-          <div className="absolute bottom-[9%] left-[6%] h-20 w-20 rounded-full border-[14px] border-brand-coral/30" />
-          <div className="relative z-10 grid h-[290px] w-[290px] place-items-center rounded-[42%_58%_50%_50%/47%_42%_58%_53%] border-[10px] border-white bg-gradient-to-br from-[#d9eee5] via-[#b8d9d0] to-[#8ebdb5] shadow-soft sm:h-[370px] sm:w-[370px]">
-            <div className="grid h-44 w-44 place-items-center rounded-[2rem] border border-white/70 bg-white/70 shadow-xl backdrop-blur sm:h-52 sm:w-52">
-              <div className="grid h-24 w-24 place-items-center rounded-full bg-primary text-white sm:h-28 sm:w-28"><WashingMachine size={62} strokeWidth={1.4} /></div>
-              <span className="-mt-2 text-xs font-extrabold tracking-[0.18em] text-brand-deep">NTA LAVAMOS</span>
-            </div>
+        <div className="relative mx-auto w-full max-w-[600px]">
+          <div className="absolute -inset-4 rounded-[2rem] bg-brand-mint/70 blur-xl" aria-hidden="true" />
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-soft">
+            <Image
+              src="/lavamos%20logo.jpg"
+              alt="NTA Lavamos Laundry Shop official logo featuring its washing machine and Wash, Dry, Fold services"
+              width={1600}
+              height={900}
+              priority
+              sizes="(max-width: 768px) 100vw, 600px"
+              className="h-auto w-full object-contain"
+            />
           </div>
-          <div className="absolute bottom-[12%] right-0 z-20 rounded-xl bg-white p-3 shadow-soft">
-            <span className="flex items-center gap-2 text-xs font-bold text-brand-deep"><Star className="fill-amber-400 text-amber-500" size={16} /> 5.0 Google rating</span>
-            <span className="mt-1 block text-[10px] text-muted-foreground">Based on 1 public review</span>
-          </div>
-        </div>
+        </div>/div>
       </section>
 
       <section className="border-y border-border bg-[#f0f5ef]">
@@ -226,7 +221,7 @@ export default function Home() {
 
       <footer className="bg-brand-deep text-white">
         <div className="container flex flex-col gap-5 border-t border-white/10 py-7 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-xl bg-white/10 text-[#a8d6c9]"><WashingMachine size={19} /></span><span><strong className="block text-sm">NTA Lavamos</strong><span className="text-[10px] text-white/55">Laundry Shop · Bato, Camarines Sur</span></span></div>
+          <div className="flex items-center gap-3"><Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={96} height={54} className="h-10 w-auto rounded-md object-contain" /><span className="text-[10px] text-white/65">Laundry Shop · Bato, Camarines Sur</span></div>
           <div className="flex items-center gap-4"><a href={business.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 transition hover:text-white"><Facebook size={15} /> Facebook page <ArrowUpRight size={13} /></a><p className="text-xs text-white/60">© {new Date().getFullYear()} NTA Lavamos Laundry Shop.</p></div>
         </div>
       </footer>
