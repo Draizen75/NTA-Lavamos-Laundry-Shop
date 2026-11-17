@@ -49,7 +49,7 @@ export default function Home() {
           />
         </div>
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(248,251,251,0.99)_0%,rgba(248,251,251,0.96)_34%,rgba(248,251,251,0.82)_52%,rgba(248,251,251,0.38)_76%,rgba(248,251,251,0.14)_100%)] sm:bg-[linear-gradient(to_bottom,rgba(248,251,251,0.98)_0%,rgba(248,251,251,0.90)_34%,rgba(248,251,251,0.62)_58%,rgba(248,251,251,0.20)_100%)] lg:bg-[linear-gradient(to_right,rgba(248,251,251,0.97)_0%,rgba(248,251,251,0.91)_25%,rgba(248,251,251,0.62)_43%,rgba(248,251,251,0.18)_63%,rgba(248,251,251,0.04)_100%)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(248,251,251,0.99)_0%,rgba(248,251,251,0.98)_38%,rgba(248,251,251,0.96)_58%,rgba(248,251,251,0.91)_78%,rgba(248,251,251,0.84)_100%)] sm:bg-[linear-gradient(to_bottom,rgba(248,251,251,0.98)_0%,rgba(248,251,251,0.90)_34%,rgba(248,251,251,0.62)_58%,rgba(248,251,251,0.20)_100%)] lg:bg-[linear-gradient(to_right,rgba(248,251,251,0.97)_0%,rgba(248,251,251,0.91)_25%,rgba(248,251,251,0.62)_43%,rgba(248,251,251,0.18)_63%,rgba(248,251,251,0.04)_100%)]"
           aria-hidden="true"
         />
         <div className="container relative grid min-h-0 items-start py-8 pb-12 sm:min-h-[620px] sm:items-center sm:py-14 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
@@ -63,9 +63,9 @@ export default function Home() {
             </p>
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call the shop</a>
-              <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center px-3 text-sm font-bold text-brand-deep hover:text-primary sm:justify-start">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
+              <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-1 rounded-lg border border-brand-deep/10 bg-white/90 px-4 text-sm font-bold text-brand-deep shadow-sm transition hover:border-primary hover:text-primary sm:justify-start sm:gap-0 sm:border-0 sm:bg-transparent sm:px-3 sm:shadow-none">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
             </div>
-            <div className="mt-8 flex items-center gap-2 text-xs text-muted-foreground sm:mt-10">
+            <div className="mt-8 inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-white/80 bg-white/85 px-3 py-2 text-xs text-muted-foreground shadow-sm backdrop-blur-sm sm:mt-10 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none">
               <span className="h-2 w-2 shrink-0 rounded-full bg-brand-red" />
               <strong className="text-brand-deep">Wash · Dry · Fold</strong>
               <span>Full-service and self-service options</span>
