@@ -34,7 +34,7 @@ export function MobileNav({ facebookHref }: MobileNavProps) {
         aria-expanded={open}
         aria-controls="mobile-navigation-panel"
         onClick={() => setOpen((value) => !value)}
-        className="grid h-10 w-10 place-items-center rounded-lg border border-border bg-white text-brand-deep transition hover:bg-brand-mint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        className="grid h-11 w-11 place-items-center rounded-lg border border-brand-deep/25 bg-white text-brand-deep shadow-sm transition-colors hover:border-brand-teal hover:bg-brand-mint active:bg-brand-mint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       >
         {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
       </button>
