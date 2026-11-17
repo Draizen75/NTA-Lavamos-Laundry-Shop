@@ -13,8 +13,8 @@ const business = {
   facebook: "https://www.facebook.com/profile.php?id=100090370825470",
 };
 
-const mapEmbed = "https://www.google.com/maps?q=place_id:" + business.placeId + "&output=embed";
-const mapLink = "https://www.google.com/maps/search/?api=1&query=NTA%20Lavamos%20Laundry%20Shop%2C%20Bato%2C%20Camarines%20Sur&query_place_id=" + business.placeId;
+const mapQuery = encodeURIComponent(business.address);\nconst mapEmbed = "https://www.google.com/maps?q=" + mapQuery + "&output=embed";
+const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(business.name + ", " + business.address);
 
 export default function Home() {
   return (
