@@ -14,7 +14,7 @@ const business = {
 };
 
 const mapQuery = encodeURIComponent(business.address);
-const mapEmbed = "https://www.google.com/maps?q=" + mapQuery + "&output=embed";
+const mapEmbed = "https://www.google.com/maps?q=" + mapQuery + "&t=k&z=18&output=embed";
 const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(business.name + ", " + business.address);
 
 export default function Home() {
