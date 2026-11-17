@@ -41,37 +41,35 @@ export default function Home() {
         <MobileNav phoneHref={business.phoneHref} facebookHref={business.facebook} />
       </header>
 
-      <section className="container grid items-center gap-8 pb-12 pt-7 sm:gap-10 sm:pb-16 sm:pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:pb-24 lg:pt-12">
-        <div className="relative z-10">
-          <Badge variant="secondary" className="border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
-          <h1 className="mt-5 max-w-[650px] text-[clamp(2.75rem,9vw,5.8rem)] font-black leading-[0.98] tracking-[-0.065em] text-brand-deep sm:mt-6">
-            Fresh clothes.<br /><span className="text-primary">Lighter days.</span>
-          </h1>
-          <p className="mt-5 max-w-lg text-sm leading-7 text-muted-foreground sm:mt-6 sm:text-base sm:leading-8">
-            Looking for a nearby laundry service in Bato? Visit NTA Lavamos Laundry Shop along Poblacion Road or call ahead to ask about current services and rates.
-          </p>
-          <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call {business.phone}</a>
-            <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center px-3 text-sm font-bold text-brand-deep hover:text-primary sm:justify-start">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
-          </div>
-          <div className="mt-8 flex flex-col items-start gap-3 text-xs text-muted-foreground sm:mt-10 md:flex-row md:flex-wrap md:items-center md:gap-x-6 md:gap-y-3">
-            <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-brand-red" /><strong className="text-brand-deep">Wash · Dry · Fold</strong> Full-service and self-service options</span>
-            <span className="flex items-center gap-2"><Clock3 size={16} /><strong className="text-brand-deep">7 AM – 7 PM</strong> listed daily hours</span>
-          </div>
+      <section className="relative isolate overflow-hidden bg-background">
+        <div className="absolute inset-0 -z-20" aria-hidden="true">
+          <Image
+            src="/lavamos%20shop.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[62%_center] lg:object-[68%_center]"
+          />
         </div>
-
-        <div className="relative mx-auto w-full max-w-[600px]">
-          <div className="absolute -inset-4 rounded-[2rem] bg-brand-mint/70 blur-xl" aria-hidden="true" />
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-soft">
-            <Image
-              src="/lavamos%20shop.jpg"
-              alt="Inside NTA Lavamos Laundry Shop showing its commercial washer and dryer machines"
-              width={1024}
-              height={1365}
-              priority
-              sizes="(max-width: 1023px) calc(100vw - 2.5rem), 600px"
-              className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[520px]"
-            />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/95 to-background/65 sm:via-background/90 sm:to-background/45 lg:bg-gradient-to-r lg:from-background lg:via-background/95 lg:via-45% lg:to-background/15" aria-hidden="true" />
+        <div className="container relative grid min-h-[680px] items-center py-12 sm:min-h-[720px] sm:py-16 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+          <div className="relative z-10 max-w-[650px]">
+            <Badge variant="secondary" className="border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
+            <h1 className="mt-5 max-w-[650px] text-[clamp(2.75rem,9vw,5.8rem)] font-black leading-[0.98] tracking-[-0.065em] text-brand-deep sm:mt-6">
+              Fresh clothes.<br /><span className="text-primary">Lighter days.</span>
+            </h1>
+            <p className="mt-5 max-w-lg text-sm leading-7 text-muted-foreground sm:mt-6 sm:text-base sm:leading-8">
+              Looking for a nearby laundry service in Bato? Visit NTA Lavamos Laundry Shop along Poblacion Road or call ahead to ask about current services and rates.
+            </p>
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call {business.phone}</a>
+              <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center px-3 text-sm font-bold text-brand-deep hover:text-primary sm:justify-start">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
+            </div>
+            <div className="mt-8 flex flex-col items-start gap-3 text-xs text-muted-foreground sm:mt-10 md:flex-row md:flex-wrap md:items-center md:gap-x-6 md:gap-y-3">
+              <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-brand-red" /><strong className="text-brand-deep">Wash · Dry · Fold</strong> Full-service and self-service options</span>
+              <span className="flex items-center gap-2"><Clock3 size={16} /><strong className="text-brand-deep">7 AM – 7 PM</strong> listed daily hours</span>
+            </div>
           </div>
         </div>
       </section>
