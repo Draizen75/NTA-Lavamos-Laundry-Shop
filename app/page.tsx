@@ -30,7 +30,7 @@ export default function Home() {
           <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-12 w-auto rounded-md object-contain" />
           <span className="sr-only">NTA Lavamos Laundry Shop · Bato</span>
         </Link>
-        <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm font-semibold text-brand-deep md:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-semibold text-brand-deep lg:flex">
           <Link className="transition-colors hover:text-primary" href="#services">Services & rates</Link>
           <Link className="transition-colors hover:text-primary" href="#gallery">Our shop</Link>
           <Link className="transition-colors hover:text-primary" href="#about">About</Link>
@@ -40,6 +40,9 @@ export default function Home() {
         </nav>
         <div className="flex items-center gap-2 md:hidden"><a href={business.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit NTA Lavamos on Facebook" className="grid h-10 w-10 place-items-center rounded-lg border border-border text-primary"><Facebook size={18} /></a><a href={business.phoneHref} className="rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white">Call now</a></div>
       </header>
+      <nav aria-label="Quick navigation" className="container flex gap-5 overflow-x-auto border-t border-border/70 py-3 text-xs font-semibold text-brand-deep md:hidden">
+        <Link className="shrink-0" href="#services">Services & rates</Link><Link className="shrink-0" href="#gallery">Our shop</Link><Link className="shrink-0" href="#about">About</Link><Link className="shrink-0" href="#visit">Location & hours</Link>
+      </nav>
 
       <section className="container grid items-center gap-10 pb-16 pt-8 md:grid-cols-[1.02fr_0.98fr] md:pb-24 md:pt-12">
         <div className="relative z-10">
@@ -55,8 +58,8 @@ export default function Home() {
             <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center px-3 text-sm font-bold text-brand-deep hover:text-primary">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-muted-foreground">
-            <span className="flex items-center gap-2"><Star size={16} className="fill-amber-400 text-amber-500" /><strong className="text-brand-deep">5.0/5</strong> Google rating · 1 review</span>
-            <span className="flex items-center gap-2"><Clock3 size={16} /><strong className="text-brand-deep">7 AM – 7 PM</strong> daily</span>
+            <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-brand-red" /><strong className="text-brand-deep">Wash · Dry · Fold</strong> Full-service and self-service options</span>
+            <span className="flex items-center gap-2"><Clock3 size={16} /><strong className="text-brand-deep">7 AM – 7 PM</strong> listed daily hours</span>
           </div>
         </div>
 
@@ -76,7 +79,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-[#f0f5ef]">
+      <section className="border-y border-border bg-brand-mint">
         <div className="container grid gap-5 py-7 sm:grid-cols-3 sm:gap-8">
           <div className="flex items-center gap-3"><MapPin className="text-primary" size={21} /><span><strong className="block text-sm text-brand-deep">Poblacion Road</strong><span className="text-xs text-muted-foreground">Bato, Camarines Sur</span></span></div>
           <div className="flex items-center gap-3"><Phone className="text-primary" size={21} /><span><strong className="block text-sm text-brand-deep">+63 905 563 0585</strong><span className="text-xs text-muted-foreground">Call the shop</span></span></div>
@@ -85,7 +88,7 @@ export default function Home() {
       </section>
 
 
-      <section id="gallery" className="bg-white py-20 sm:py-24">
+      <section id="gallery" className="bg-background py-20 sm:py-24">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Inside NTA Lavamos</p>
@@ -98,14 +101,14 @@ export default function Home() {
               <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our laundry machines</figcaption>
             </figure>
             <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-              <Image src="/lavamos%20shop%201.jpg" alt="Customer area and laundry equipment inside NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 768px) 100vw, 50vw" className="h-[360px] w-full object-cover sm:h-[460px]" />
-              <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our shop interior</figcaption>
+              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 768px) 100vw, 50vw" className="h-[360px] w-full object-cover sm:h-[460px]" />
+              <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Weighing and laundry area</figcaption>
             </figure>
           </div>
         </div>
       </section>
 
-      <section id="services" className="bg-[#f4f8f5] py-20 sm:py-24">
+      <section id="services" className="bg-brand-mint/70 py-20 sm:py-24">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Services & pricing</p>
@@ -115,36 +118,36 @@ export default function Home() {
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
-              <div className="bg-[#e83b83] px-6 py-5 text-white">
+              <div className="bg-brand-red px-6 py-5 text-white">
                 <h3 className="text-2xl font-black">Full-service</h3>
                 <p className="mt-1 text-sm text-white/90">Wash, dry and fold</p>
               </div>
               <CardContent className="p-6">
                 <ul className="divide-y divide-border">
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">With detergent and fabcon</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱190.00</strong></li>
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">No detergent or fabcon</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱175.00</strong></li>
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Fabcon only (no detergent)</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱185.00</strong></li>
-                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Detergent only (no fabcon)</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱180.00</strong></li>
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">With detergent and fabcon</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱190.00</strong></li>
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">No detergent or fabcon</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱175.00</strong></li>
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Fabcon only (no detergent)</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱185.00</strong></li>
+                  <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Detergent only (no fabcon)</span><strong className="whitespace-nowrap text-lg font-black text-brand-red">₱180.00</strong></li>
                 </ul>
-                <p className="mt-4 rounded-xl bg-[#fff0f6] p-4 text-xs leading-5 text-[#8f2855]">For detergent and fabcon add-ons, refer to the shop&apos;s price list.</p>
+                <p className="mt-4 rounded-xl bg-brand-red-soft p-4 text-xs leading-5 text-brand-red">For detergent and fabcon add-ons, refer to the shop&apos;s price list.</p>
               </CardContent>
             </Card>
 
             <Card className="overflow-hidden rounded-3xl border-0 shadow-sm">
-              <div className="bg-[#078b70] px-6 py-5 text-white">
+              <div className="bg-brand-blue px-6 py-5 text-white">
                 <h3 className="text-2xl font-black">Self-service</h3>
                 <p className="mt-1 text-sm text-white/90">Select the machine service you need</p>
               </div>
               <CardContent className="p-6">
                 <ul className="divide-y divide-border">
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Wash only</span><strong className="text-lg font-black text-[#087663]">₱70.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Dry only</span><strong className="text-lg font-black text-[#087663]">₱75.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Spin dry</span><strong className="text-lg font-black text-[#087663]">₱15.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Fold</span><strong className="text-lg font-black text-[#087663]">₱20.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional wash (24 mins)</span><strong className="text-lg font-black text-[#087663]">₱50.00</strong></li>
-                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional dry (5 mins)</span><strong className="text-lg font-black text-[#087663]">₱10.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Wash only</span><strong className="text-lg font-black text-brand-blue">₱70.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Dry only</span><strong className="text-lg font-black text-brand-blue">₱75.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Spin dry</span><strong className="text-lg font-black text-brand-blue">₱15.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Fold</span><strong className="text-lg font-black text-brand-blue">₱20.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional wash (24 mins)</span><strong className="text-lg font-black text-brand-blue">₱50.00</strong></li>
+                  <li className="flex items-center justify-between gap-4 py-3 text-sm"><span className="font-semibold text-brand-deep">Additional dry (5 mins)</span><strong className="text-lg font-black text-brand-blue">₱10.00</strong></li>
                 </ul>
-                <p className="mt-4 rounded-xl bg-[#eaf8f3] p-4 text-xs leading-5 text-[#176b5a]">Available upon request and subject to machine availability and laundry volume.</p>
+                <p className="mt-4 rounded-xl bg-brand-blue-soft p-4 text-xs leading-5 text-brand-deep">Available upon request and subject to machine availability and laundry volume.</p>
               </CardContent>
             </Card>
           </div>
@@ -154,14 +157,14 @@ export default function Home() {
               <CardContent className="p-6 sm:p-8">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Service turnaround</p>
                 <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl bg-[#eaf4ff] p-5">
+                  <div className="rounded-2xl bg-brand-blue-soft p-5">
                     <h3 className="font-extrabold text-brand-deep">Regular service</h3>
                     <p className="mt-1 text-2xl font-black text-primary">No extra fee</p>
                     <p className="mt-3 text-xs leading-5 text-muted-foreground">Processed according to the regular queue. Same-day service may be available when daily capacity allows. During peak periods, orders may be scheduled for next-day or later pickup.</p>
                   </div>
-                  <div className="rounded-2xl bg-[#fff0f6] p-5">
+                  <div className="rounded-2xl bg-brand-red-soft p-5">
                     <h3 className="font-extrabold text-brand-deep">Rush service</h3>
-                    <p className="mt-1 text-2xl font-black text-[#e83b83]">+₱50 / load</p>
+                    <p className="mt-1 text-2xl font-black text-brand-red">+₱50 / load</p>
                     <p className="mt-3 text-xs leading-5 text-muted-foreground">Priority processing. Available upon request and subject to machine availability and laundry volume. Comforters, bulky items and special loads may require additional processing time.</p>
                   </div>
                 </div>
@@ -172,10 +175,10 @@ export default function Home() {
               <CardContent className="p-6 sm:p-8">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Laundry load capacity</p>
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-2xl bg-[#eef8e8] p-4"><p className="text-sm font-extrabold text-brand-deep">Light load</p><p className="mt-1 text-2xl font-black text-primary">8 kg</p><p className="mt-1 text-xs text-muted-foreground">T-shirts, shorts, underwear, thin pajamas, blouses and other lightweight garments.</p></div>
-                  <div className="rounded-2xl bg-[#eaf3ff] p-4"><p className="text-sm font-extrabold text-brand-deep">Standard mixed load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">A combination of light and regular garments such as shirts, pants and pajamas.</p></div>
-                  <div className="rounded-2xl bg-[#fff4df] p-4"><p className="text-sm font-extrabold text-brand-deep">Heavy load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">Jeans, denim clothing, towels, curtains, hoodies, sweatshirts and jackets.</p></div>
-                  <div className="rounded-2xl bg-[#fff0f6] p-4"><p className="text-sm font-extrabold text-brand-deep">Comforter</p><p className="mt-1 text-2xl font-black text-primary">1 piece</p><p className="mt-1 text-xs text-muted-foreground">One comforter per load.</p></div>
+                  <div className="rounded-2xl bg-brand-mint p-4"><p className="text-sm font-extrabold text-brand-deep">Light load</p><p className="mt-1 text-2xl font-black text-primary">8 kg</p><p className="mt-1 text-xs text-muted-foreground">T-shirts, shorts, underwear, thin pajamas, blouses and other lightweight garments.</p></div>
+                  <div className="rounded-2xl bg-brand-blue-soft p-4"><p className="text-sm font-extrabold text-brand-deep">Standard mixed load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">A combination of light and regular garments such as shirts, pants and pajamas.</p></div>
+                  <div className="rounded-2xl bg-brand-red-soft p-4"><p className="text-sm font-extrabold text-brand-deep">Heavy load</p><p className="mt-1 text-2xl font-black text-primary">7 kg</p><p className="mt-1 text-xs text-muted-foreground">Jeans, denim clothing, towels, curtains, hoodies, sweatshirts and jackets.</p></div>
+                  <div className="rounded-2xl bg-brand-red-soft p-4"><p className="text-sm font-extrabold text-brand-deep">Comforter</p><p className="mt-1 text-2xl font-black text-primary">1 piece</p><p className="mt-1 text-xs text-muted-foreground">One comforter per load.</p></div>
                 </div>
                 <p className="mt-4 text-[11px] leading-5 text-muted-foreground"><strong className="text-brand-deep">Important:</strong> Load capacity may be reduced depending on size, thickness, weight and type of laundry to ensure proper washing and drying.</p>
               </CardContent>
@@ -202,17 +205,17 @@ export default function Home() {
           <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-brand-deep sm:text-5xl">Your neighborhood laundry <span className="text-primary">stop.</span></h2>
           <p className="mt-5 text-sm leading-7 text-muted-foreground">Choose full-service wash, dry and fold or self-service machine options. View the service rates, turnaround choices and load-capacity guidance above, or contact the shop to confirm availability.</p>
           <Card className="mt-7 rounded-2xl border-border/80 shadow-sm">
-            <CardContent className="flex items-center gap-4 p-5">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-mint text-primary"><Star className="fill-amber-400 text-amber-500" size={21} /></span>
-              <div><p className="text-2xl font-black text-brand-deep">5.0 <span className="text-sm font-semibold text-muted-foreground">/ 5</span></p><p className="text-xs text-muted-foreground">Google Maps rating · 1 review</p></div>
-              <a className="ml-auto text-xs font-bold text-primary hover:underline" href={mapLink} target="_blank" rel="noopener noreferrer">View listing <ArrowUpRight size={13} className="inline" /></a>
+            <CardContent className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-mint text-primary"><Phone size={20} /></span>
+              <div className="min-w-0 flex-1"><p className="font-extrabold text-brand-deep">Need help choosing a service?</p><p className="mt-1 text-xs leading-5 text-muted-foreground">Call the shop to confirm current rates, machine availability and turnaround.</p></div>
+              <a className="inline-flex h-10 shrink-0 items-center justify-center rounded-lg bg-primary px-4 text-xs font-bold text-white hover:bg-primary/90" href={business.phoneHref}>Call the shop</a>
             </CardContent>
           </Card>
         </div>
       </section>
 
       <section id="visit" className="container pb-20 sm:pb-28">
-        <div className="grid overflow-hidden rounded-3xl bg-[#edf4ed] md:grid-cols-[0.78fr_1.22fr]">
+        <div className="grid overflow-hidden rounded-3xl bg-brand-mint md:grid-cols-[0.78fr_1.22fr]">
           <div className="p-8 sm:p-12">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Find the shop</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight text-brand-deep">Visit <span className="text-primary">NTA Lavamos.</span></h2>
@@ -223,7 +226,7 @@ export default function Home() {
             </div>
             <a href={mapLink} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex h-11 items-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-white hover:bg-primary/90">Open in Google Maps <ArrowUpRight size={16} /></a>
           </div>
-          <div className="min-h-[340px] bg-[#dce9df]">
+          <div className="min-h-[340px] bg-brand-mint">
             <iframe
               title="Interactive Google Map showing NTA Lavamos Laundry Shop in Bato, Camarines Sur"
               src={mapEmbed}
@@ -241,7 +244,7 @@ export default function Home() {
       <section id="contact" className="bg-brand-deep text-white">
         <div className="container flex flex-col gap-6 py-14 sm:flex-row sm:items-center sm:justify-between">
           <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-[#a8d6c9]">Need laundry service?</p><h2 className="mt-3 text-3xl font-black sm:text-4xl">Call NTA Lavamos.</h2><p className="mt-2 text-sm text-white/70">Ask about available services, rates, and order turnaround.</p></div>
-          <a href={business.phoneHref} className="inline-flex h-12 shrink-0 items-center justify-center gap-3 rounded-lg bg-[#f4d77b] px-6 text-sm font-bold text-brand-deep transition hover:bg-[#ffe49b]"><Phone size={17} /> {business.phone}</a>
+          <a href={business.phoneHref} className="inline-flex h-12 shrink-0 items-center justify-center gap-3 rounded-lg bg-brand-cyan px-6 text-sm font-bold text-brand-deep transition hover:bg-brand-cyan/85"><Phone size={17} /> {business.phone}</a>
         </div>
       </section>
 
