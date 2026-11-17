@@ -19,7 +19,7 @@ const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURICo
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-x-clip">
       <div className="bg-brand-deep px-4 py-2 text-center text-[10px] font-semibold tracking-[0.16em] text-white sm:text-xs">
         YOUR LOCAL LAUNDRY SHOP IN BATO
       </div>
@@ -29,7 +29,7 @@ export default function Home() {
           <Image src="/lavamos%20logo.jpg" alt="NTA Lavamos Laundry Shop logo" width={112} height={63} priority className="h-12 w-auto rounded-md object-contain" />
           <span className="sr-only">NTA Lavamos Laundry Shop · Bato</span>
         </Link>
-        <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-semibold text-brand-deep lg:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-4 text-xs font-semibold text-brand-deep lg:flex xl:text-sm">
           <Link className="transition-colors hover:text-primary" href="#services">Services & rates</Link>
           <Link className="transition-colors hover:text-primary" href="#gallery">Our shop</Link>
           <Link className="transition-colors hover:text-primary" href="#about">About</Link>
@@ -39,7 +39,7 @@ export default function Home() {
         </nav>
         <div className="flex items-center gap-2 lg:hidden"><a href={business.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit NTA Lavamos on Facebook" className="grid h-10 w-10 place-items-center rounded-lg border border-border text-primary"><Facebook size={18} /></a><a href={business.phoneHref} className="rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white">Call now</a></div>
       </header>
-      <nav aria-label="Quick navigation" className="container flex gap-5 overflow-x-auto border-t border-border/70 py-3 text-xs font-semibold text-brand-deep lg:hidden">
+      <nav aria-label="Quick navigation" className="container grid grid-cols-2 gap-x-4 gap-y-3 border-t border-border/70 py-3 text-xs font-semibold text-brand-deep sm:flex sm:flex-wrap sm:gap-5 lg:hidden">
         <Link className="shrink-0" href="#services">Services & rates</Link><Link className="shrink-0" href="#gallery">Our shop</Link><Link className="shrink-0" href="#about">About</Link><Link className="shrink-0" href="#visit">Location & hours</Link>
       </nav>
 
@@ -56,7 +56,7 @@ export default function Home() {
             <a href={business.phoneHref} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-soft transition hover:bg-primary/90 sm:w-auto sm:px-6"><Phone size={17} /> Call {business.phone}</a>
             <a href={mapLink} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center px-3 text-sm font-bold text-brand-deep hover:text-primary sm:justify-start">Get directions <ArrowUpRight className="ml-2" size={17} /></a>
           </div>
-          <div className="mt-8 flex flex-col items-start gap-3 text-xs text-muted-foreground sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3">
+          <div className="mt-8 flex flex-col items-start gap-3 text-xs text-muted-foreground sm:mt-10 md:flex-row md:flex-wrap md:items-center md:gap-x-6 md:gap-y-3">
             <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-brand-red" /><strong className="text-brand-deep">Wash · Dry · Fold</strong> Full-service and self-service options</span>
             <span className="flex items-center gap-2"><Clock3 size={16} /><strong className="text-brand-deep">7 AM – 7 PM</strong> listed daily hours</span>
           </div>
@@ -71,7 +71,7 @@ export default function Home() {
               width={1024}
               height={1365}
               priority
-              sizes="(max-width: 768px) 100vw, 600px"
+              sizes="(max-width: 1023px) calc(100vw - 2.5rem), 600px"
               className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[520px]"
             />
           </div>
@@ -96,11 +96,11 @@ export default function Home() {
           </div>
           <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 md:grid-cols-2">
             <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-              <Image src="/lavamos%20shop.jpg" alt="Commercial washer and dryer machines inside NTA Lavamos Laundry Shop" width={1024} height={1365} sizes="(max-width: 768px) 100vw, 50vw" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
+              <Image src="/lavamos%20shop.jpg" alt="Commercial washer and dryer machines inside NTA Lavamos Laundry Shop" width={1024} height={1365} sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc((100vw - 4rem) / 2), 568px" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
               <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Our laundry machines</figcaption>
             </figure>
             <figure className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 768px) 100vw, 50vw" className="h-[360px] w-full object-cover sm:h-[460px]" />
+              <Image src="/lavamos%20shop%201.jpg" alt="Laundry machines, customer weighing scale and shop interior at NTA Lavamos Laundry Shop" width={1400} height={1050} sizes="(max-width: 768px) 100vw, 50vw" className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[460px]" />
               <figcaption className="px-5 py-4 text-sm font-semibold text-brand-deep">Weighing and laundry area</figcaption>
             </figure>
           </div>
@@ -195,7 +195,7 @@ export default function Home() {
             alt="Inside NTA Lavamos Laundry Shop, showing the actual shop interior and laundry equipment"
             width={1400}
             height={1050}
-            sizes="(max-width: 768px) 100vw, 490px"
+            sizes="(max-width: 1023px) calc(100vw - 2.5rem), 490px"
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
@@ -223,7 +223,7 @@ export default function Home() {
               <div className="flex items-start gap-3"><Clock3 className="mt-0.5 text-primary" size={20} /><span><strong className="block text-sm text-brand-deep">Opening hours</strong><span className="text-sm text-muted-foreground">{business.hours}</span></span></div>
               <div className="flex items-start gap-3"><Phone className="mt-0.5 text-primary" size={20} /><span><strong className="block text-sm text-brand-deep">Phone</strong><a className="text-sm text-primary hover:underline" href={business.phoneHref}>{business.phone}</a></span></div>
             </div>
-            <a href={mapLink} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex h-11 items-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-white hover:bg-primary/90">Open in Google Maps <ArrowUpRight size={16} /></a>
+            <a href={mapLink} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-white hover:bg-primary/90 sm:w-auto">Open in Google Maps <ArrowUpRight size={16} /></a>
           </div>
           <div className="h-[300px] bg-brand-mint sm:h-[380px] lg:h-auto lg:min-h-[420px]">
             <iframe
@@ -243,7 +243,7 @@ export default function Home() {
       <section id="contact" className="bg-brand-deep text-white">
         <div className="container flex flex-col gap-5 py-10 sm:gap-6 sm:py-14 md:flex-row md:items-center md:justify-between">
           <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan">Need laundry service?</p><h2 className="mt-3 text-3xl font-black sm:text-4xl">Call NTA Lavamos.</h2><p className="mt-2 text-sm text-white/70">Ask about available services, rates, and order turnaround.</p></div>
-          <a href={business.phoneHref} className="inline-flex h-12 shrink-0 items-center justify-center gap-3 rounded-lg bg-brand-cyan px-6 text-sm font-bold text-brand-deep transition hover:bg-brand-cyan/85"><Phone size={17} /> {business.phone}</a>
+          <a href={business.phoneHref} className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-3 rounded-lg bg-brand-cyan px-6 text-sm font-bold text-brand-deep transition hover:bg-brand-cyan/85 sm:w-auto"><Phone size={17} /> {business.phone}</a>
         </div>
       </section>
 
