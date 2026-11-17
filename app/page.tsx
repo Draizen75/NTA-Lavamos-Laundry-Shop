@@ -44,14 +44,14 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[58%_78%] sm:object-[62%_65%] lg:object-[72%_center]"
+            className="object-cover object-[58%_62%] sm:object-[62%_65%] lg:object-[72%_center]"
           />
         </div>
         <div
-          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.99)_38%,rgba(248,251,251,0.9)_58%,rgba(248,251,251,0.48)_100%)] sm:bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.97)_34%,rgba(248,251,251,0.78)_58%,rgba(248,251,251,0.28)_100%)] lg:bg-[linear-gradient(to_right,#f8fbfb_0%,rgba(248,251,251,0.99)_34%,rgba(248,251,251,0.88)_49%,rgba(248,251,251,0.28)_72%,rgba(248,251,251,0.08)_100%)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.97)_16%,rgba(248,251,251,0.84)_42%,rgba(248,251,251,0.38)_100%)] sm:bg-[linear-gradient(to_bottom,#f8fbfb_0%,rgba(248,251,251,0.97)_34%,rgba(248,251,251,0.78)_58%,rgba(248,251,251,0.28)_100%)] lg:bg-[linear-gradient(to_right,#f8fbfb_0%,rgba(248,251,251,0.99)_34%,rgba(248,251,251,0.88)_49%,rgba(248,251,251,0.28)_72%,rgba(248,251,251,0.08)_100%)]"
           aria-hidden="true"
         />
-        <div className="container relative grid min-h-[680px] items-center py-12 sm:min-h-[720px] sm:py-16 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+        <div className="container relative grid min-h-0 items-start py-8 pb-12 sm:min-h-[620px] sm:items-center sm:py-14 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
           <div className="relative z-10 max-w-[650px]">
             <Badge variant="secondary" className="border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
             <h1 className="mt-5 max-w-[650px] text-[clamp(2.75rem,9vw,5.8rem)] font-black leading-[0.98] tracking-[-0.065em] text-brand-deep sm:mt-6">
