@@ -89,7 +89,7 @@ export default function Home() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Services & pricing</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight text-brand-deep sm:text-5xl">Laundry made simple.</h2>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">Choose full-service laundry or use the self-service machines. Prices below follow the shop's supplied rate poster.</p>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">Choose full-service laundry or use the self-service machines. Prices below follow the shop&apos;s supplied rate poster.</p>
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -105,7 +105,7 @@ export default function Home() {
                   <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Fabcon only (no detergent)</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱185.00</strong></li>
                   <li className="flex items-start justify-between gap-4 py-4 text-sm"><span className="font-semibold text-brand-deep">Detergent only (no fabcon)</span><strong className="whitespace-nowrap text-lg font-black text-[#e83b83]">₱180.00</strong></li>
                 </ul>
-                <p className="mt-4 rounded-xl bg-[#fff0f6] p-4 text-xs leading-5 text-[#8f2855]">For detergent and fabcon add-ons, refer to the shop's price list.</p>
+                <p className="mt-4 rounded-xl bg-[#fff0f6] p-4 text-xs leading-5 text-[#8f2855]">For detergent and fabcon add-ons, refer to the shop&apos;s price list.</p>
               </CardContent>
             </Card>
 
