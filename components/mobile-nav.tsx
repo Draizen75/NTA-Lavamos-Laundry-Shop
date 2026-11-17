@@ -12,7 +12,6 @@ type MobileNavProps = {
 const links = [
   { href: "#services", label: "Services & rates" },
   { href: "#gallery", label: "Our shop" },
-  { href: "#about", label: "About" },
   { href: "#visit", label: "Location & hours" },
 ];
 
