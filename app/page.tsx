@@ -52,7 +52,7 @@ export default function Home() {
             className="object-cover object-[62%_center] lg:object-[68%_center]"
           />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/95 to-background/65 sm:via-background/90 sm:to-background/45 lg:bg-gradient-to-r lg:from-background lg:via-background/95 lg:via-45% lg:to-background/15" aria-hidden="true" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/95 to-background/65 sm:via-background/90 sm:to-background/45 lg:bg-gradient-to-r lg:from-background lg:via-background/95 lg:via-[45%] lg:to-background/15" aria-hidden="true" />
         <div className="container relative grid min-h-[680px] items-center py-12 sm:min-h-[720px] sm:py-16 lg:min-h-[680px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
           <div className="relative z-10 max-w-[650px]">
             <Badge variant="secondary" className="border-0 bg-brand-mint text-brand-deep">Bato, Camarines Sur</Badge>
