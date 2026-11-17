@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Clock3, Facebook, MapPin, Phone } from "lucide-react";
 import { MobileNav } from "@/components/mobile-nav";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,7 +20,7 @@ const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURICo
 
 export default function Home() {
   return (
-    <main className="overflow-x-clip">
+    <main id="top" className="overflow-x-clip">
       <div className="bg-brand-deep px-4 py-2 text-center text-[10px] font-semibold tracking-[0.16em] text-white sm:text-xs">
         YOUR LOCAL LAUNDRY SHOP IN BATO
       </div>
@@ -277,12 +277,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-9 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-9 border-t border-white/10 pt-5 text-xs text-white/55">
             <p>© {new Date().getFullYear()} NTA Lavamos Laundry Shop. All rights reserved.</p>
-            <a href="#top" className="w-fit transition hover:text-brand-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan">Back to top ↑</a>
           </div>
         </div>
       </footer>
+
+      <a
+        href="#top"
+        aria-label="Back to top"
+        className="fixed bottom-5 right-5 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-brand-deep text-white shadow-lg transition hover:-translate-y-1 hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:bottom-7 sm:right-7"
+      >
+        <ArrowUp size={20} aria-hidden="true" />
+      </a>
     </main>
   );
 }
